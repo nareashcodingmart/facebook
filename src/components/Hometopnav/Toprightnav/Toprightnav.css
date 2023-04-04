@@ -1,0 +1,29 @@
+.topnav-3,.topnav-3 div,.topnav-3 div span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap:8px;
+}
+.topnav-3{
+    z-index: 2000;
+    padding-right: 16px;
+}
+
+.topnav-3 div span{
+    background-color:#E4E6EB;
+    height: 70%;
+    width:40px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.topnav-3 div span:hover{
+    background-color: #cccdcfe0;
+}
+.topmenu svg{
+    width:50%;
+    height:50%;
+}
+.topnav-3 div img{
+    border-radius: 50px;
+}
