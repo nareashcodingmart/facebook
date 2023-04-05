@@ -2,6 +2,7 @@
     width: 303.5px;
     max-height: calc(100vmin - 56px);
     overflow-y: hidden;
+    position: fixed;
 }
 
 .homeleftnav:hover {
@@ -40,7 +41,7 @@
 
 .homeleftnavlist a div:hover,
 .leftnav-seemore:hover {
-    background-color: #cccdcfe0;
+    background-color: #e1e2e4e0;
 }
 
 .homeleftnavlist a div img {

@@ -1,3 +1,11 @@
+.homecontent{
+    display: flex;
+    justify-content:space-between;
+}
+.homeleftnav-outer{
+    
+    width: fit-content;
+}
 @media screen and (max-width:1230px) {
     .homeleftnav-outer{
         display: none;

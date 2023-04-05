@@ -19,8 +19,6 @@ const Loginform = (props) => {
     let res=await Apicall("post",logindata,"login")
        if(res.status===201){
       localStorage.setItem("token",res.data.message)
-      let res1=await Apicall("get","","home/getPost")
-      sessionStorage.setItem("user",JSON.stringify(res1.data))
       props.changedisplay();
        }
       }
