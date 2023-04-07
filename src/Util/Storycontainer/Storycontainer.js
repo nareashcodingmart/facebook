@@ -1,4 +1,4 @@
-import { Story } from "../../Assert/List/List"
+import { Story,Reellist} from "../../Assert/List/List"
 import {Link} from "react-router-dom"
 export const Storysetlist = () => {
     let arr = [];
@@ -6,10 +6,19 @@ export const Storysetlist = () => {
         arr.push(<Link to="" className="storysetview">
             <img className="storyviewbackgroungimg"src={Story[i].backgroundimg} alt="" />
             <div className="storysetviewouter"><img className="storyviewdpimg"id={Story[i].storyview?"storycontaineractive":""} src={Story[i].dpimg} alt="" />
-            <span>{Story[i].name}</span>
+            <div>{Story[i].name}</div>
             </div>
         </Link>)
     }
-    // console.log("hiiiu"+arr)
     return arr;
+}
+export const Reels=()=>{
+    let arr=[];
+for(let i=0;i<Reellist.length;i++){
+    arr.push(<Link to="" className="storysetview">
+        <img className="storyviewbackgroungimg" src={Reellist[i].img} alt=""/>
+        <div className="storyviewinreels">{Reellist[i].views}</div>
+    </Link>)
+}
+return arr
 }

@@ -3,6 +3,7 @@
     background-color: white;
     margin-top: 24px;
     border-radius: 10px;
+    padding-bottom: 6px;
 }
 .storycontainertitle{
     padding: 0 15px;
@@ -57,9 +58,13 @@ margin-right:8px;
     height: 200px;
     padding: 8px 0;
     padding-top:16px;
+    padding-left: 7px;
     display: flex;
     width:fit-content;
 }
 .storyset{
     overflow-x:auto
+}
+.storyset::-webkit-scrollbar{
+    display:none;
 }
