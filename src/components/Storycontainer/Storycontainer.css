@@ -1,17 +1,19 @@
-.storycontainer{
+.storycontainer {
     width: 500px;
     background-color: white;
     margin-top: 24px;
     border-radius: 10px;
     padding-bottom: 6px;
 }
-.storycontainertitle{
+
+.storycontainertitle {
     padding: 0 15px;
-    display: flex;   
-    border-bottom:1px solid #F1F2F4;
+    display: flex;
+    border-bottom: 1px solid #F1F2F4;
 }
-.storycontainertitle div{
-    cursor:pointer;
+
+.storycontainertitle div {
+    cursor: pointer;
     width: 50%;
     height: 60px;
     font-family: Arial, Helvetica, sans-serif;
@@ -19,52 +21,59 @@
     font-size: 15px;
     box-sizing: border-box;
     padding: 4px;
-    color:#64676A;
-    border-bottom:3px solid transparent;
-}
-.storycontainertitle div svg{
-width: 20px;
-height: 20px;
-margin-right:8px;
+    color: #64676A;
+    border-bottom: 3px solid transparent;
 }
 
-.storycontainertitlehover{
-   height: 100%;
-   width: 100%;
+.storycontainertitle div svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.storycontainertitlehover {
+    height: 100%;
+    width: 100%;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 2px;
 }
-.storycontainertitlehoveroff{
+
+.storycontainertitlehoveroff {
     height: 100%;
     width: 100%;
-     border-radius: 10px;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     padding-top: 2px;
- }
-.storycontainertitlehover:hover{
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2px;
+}
+
+.storycontainertitlehover:hover {
     background-color: #E4E6EB;
 }
-#storycontainertitleactive{
 
-    border-bottom:3px solid #1977F2;
+#storycontainertitleactive {
+
+    border-bottom: 3px solid #1977F2;
     color: #1977F2;
 }
-.storycontainerset{
+
+.storycontainerset {
     height: 200px;
     padding: 8px 0;
-    padding-top:16px;
+    padding-top: 16px;
     padding-left: 7px;
     display: flex;
-    width:fit-content;
+    width: fit-content;
 }
-.storyset{
-    overflow-x:auto
+
+.storyset {
+    overflow-x: auto
 }
-.storyset::-webkit-scrollbar{
-    display:none;
+
+.storyset::-webkit-scrollbar {
+    display: none;
 }
