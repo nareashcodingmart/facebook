@@ -2,12 +2,16 @@
     display: flex;
     justify-content:space-between;
 }
-.homeleftnav-outer{
+.homeleftnav-outer,.homecontactlist{
     
     width: fit-content;
 }
 @media screen and (max-width:1230px) {
-    .homeleftnav-outer{
+    .homeleftnav-outer,.homecontactlist{
         display: none;
+    }
+    .homecontent{
+        display: flex;
+        justify-content:center;
     }
 }

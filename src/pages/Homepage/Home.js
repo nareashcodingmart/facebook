@@ -8,7 +8,6 @@ import Marketpage from '../Marketpage/Marketpage';
 import Groupspage from "../Groupspages/Groupspage"
 import Gamespage from "../Gamespage/Gamepage"
 const Home = (props) => {
-
   return (
     <div>
       <Hometopnav />

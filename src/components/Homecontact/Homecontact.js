@@ -1,9 +1,9 @@
 import React from 'react'
 import "./Homecontact.css"
 import Contactlist from '../Contactlist/Contactlist'
-import { ContactList, Grouplist } from "../../Assert/Contactlist/Contactlist"
-const Homecontact =() => {
-      
+// import { ContactList, Grouplist } from "../../Assert/Contactlist/Contactlist"
+const Homecontact =(props) => {
+
   return (
     <div className='homecontact'>
       <div className='birthdayview'>
@@ -24,14 +24,14 @@ const Homecontact =() => {
 
           </span>
         </div>
-        <Contactlist list={ContactList} />
+        <Contactlist list={props.contactlist} />
       </div>
       <div className='birthdayline'></div>
       <div>
         <div className='contactgroup'>
           <span>Group conversations</span>
         </div>
-        <Contactlist list={Grouplist} />
+        {/* <Contactlist list={Grouplist} /> */}
         <div className='contactlist contactgroupcreate'><div>+</div><span> Create new group</span></div>
       </div>
     </div>

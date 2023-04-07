@@ -1,10 +1,10 @@
 
 import { Link } from "react-router-dom";
-import { Homeleftnavlist,Homeleftnavfooter } from "../../Assert/Homeleftnav/Homeleftnav"
-export const Leftnavlist = (i,n) => {
+import {Homeleftnavfooter } from "../../Assert/Homeleftnav/Homeleftnav"
+export const Leftnavlist = (i,n,list) => {
     let arr = [];
     for (; i < n; i++) {
-            arr.push(<Link to={Homeleftnavlist[i].link} key={i}><div><img src={Homeleftnavlist[i].img} alt=""/> <span>{Homeleftnavlist[i].name}</span></div></Link>);
+            arr.push(<Link to={list[i].link} key={i}><div><img src={list[i].img} alt=""/> <span>{list[i].name}</span></div></Link>);
     }
     return arr;
 }

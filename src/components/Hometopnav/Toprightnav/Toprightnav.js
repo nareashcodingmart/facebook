@@ -1,6 +1,13 @@
 import React from 'react'
 import "./Toprightnav.css"
+import { useState } from 'react'
+import { Profile } from '../../../Util/Getdata/getdata';
+import { useEffect } from 'react';
 const Toprightnav = () => {
+    const [profile, setProfile] = useState(0);
+    useEffect(() => {
+        Profile(setProfile);
+    }, [])
     return (
         <div className='topnav-3'>
             <div>
@@ -19,8 +26,7 @@ const Toprightnav = () => {
                 </span>
             </div>
             <div>
-                <img src="https://scontent.fcjb7-1.fna.fbcdn.net/v/t39.30808-1/276202347_2150814471771966_507197277566496472_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=103&ccb=1-7&_nc_sid=7206a8&_nc_ohc=3ygIkPAbnWMAX_wEwr1&_nc_ht=scontent.fcjb7-1.fna&oh=00_AfBizbDJHRdupcWpwV2umkr7fMbUCHAUQozYWvGnu8cO3Q&oe=642D5FC3" alt='' />
-
+                <img src={profile !== 0 ? profile.profile : null} alt="" />
             </div>
         </div>
     )
