@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import "./Hometopnav.css";
 import Topcenternav from './Topcenternav/Topcenternav';
 import Toprightnav from './Toprightnav/Toprightnav';
-// import Inbutbox from "../Inputbox/Inbutbox";
-// import Apicall from "../../Request/Apicall"
 const Hometopnav = () => {
   return (
 

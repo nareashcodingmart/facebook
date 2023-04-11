@@ -7,6 +7,7 @@ import "./Home.css";
 import Marketpage from '../Marketpage/Marketpage';
 import Groupspage from "../Groupspages/Groupspage"
 import Gamespage from "../Gamespage/Gamepage"
+import Profilepage from '../Profilepage/Profilepage';
 const Home = (props) => {
   return (
     <div>
@@ -19,7 +20,8 @@ const Home = (props) => {
           <Route path="/marketplace" element={<Marketpage />} />
           <Route path="/groups" element={<Groupspage />} />
           <Route path="/gaming" element={<Gamespage />} />
-
+          <Route path="/profile" element={<Profilepage/>}/>
+          <Route path="/profile/:id" element={<Profilepage/>}/>
         </Routes>
 
         <button onClick={props.changedisplay}>logout</button>

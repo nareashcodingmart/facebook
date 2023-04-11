@@ -6,7 +6,7 @@ const Homeleftnav = (props) => {
   
   console.log(props.profile)
   Homeleftnavlist[0].img=props.profile.profile;
-  Homeleftnavlist[0].name=props.profile.first_name;
+  Homeleftnavlist[0].name=`${props.profile.first_name} ${props.profile.last_name}`;
   console.log(Homeleftnavlist)
   const [leftnav, setLeftnav] = useState(0);
   return (

@@ -10,7 +10,7 @@ export const HomeContactlist = (list) => {
                     </span>
                     <span className={list[i].active === 1 ? "contactactive" : "contactinactive"}></span>
                 </div>
-                <span>{list[i].first_name}</span>
+                <span>{list[i].first_name} {list[i].last_name}</span>
             </div>)
     }
     return (

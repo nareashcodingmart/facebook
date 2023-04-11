@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 export const Storysetlist = () => {
     let arr = [];
     for (let i = 0; i <Story.length; i++) {
-        arr.push(<Link to="" className="storysetview">
+        arr.push(<Link to="" className="storysetview" key={i}>
             <img className="storyviewbackgroungimg"src={Story[i].backgroundimg} alt="" />
             <div className="storysetviewouter"><img className="storyviewdpimg"id={Story[i].storyview?"storycontaineractive":""} src={Story[i].dpimg} alt="" />
             <div>{Story[i].name}</div>

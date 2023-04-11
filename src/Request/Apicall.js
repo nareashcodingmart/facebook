@@ -2,6 +2,7 @@
 import axios from "axios";
 const Apicall = async(method,data,link) => {
   let res;
+  console.log(process.env.REACT_APP_API_KEY)
   switch(method){
     case "post": {res=await axios.post(`${process.env.REACT_APP_API_KEY}${link}`,data);
     break;}
