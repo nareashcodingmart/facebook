@@ -87,36 +87,14 @@
 
 .homeleftnavline {
     margin: 0 16px;
-    margin-top: 8px;
+    margin-top: 7px;
     border-bottom: 1px solid #ced0d4;
 }
-
-.homeleftnavfooter {
-    padding: 22px 16px 0 16px;
-    display: flex;
-    flex-wrap: wrap;
+.homeleftnavfotter{
+   padding:9px 16px
 }
 
-.homeleftnavfooter li {
-    list-style: none;
-    display: flex;
-    width: fit-content;
-    color: #65676B;
-    font-size: 13px;
-    font-family: Arial, Helvetica, sans-serif;
-}
 
-.homeleftnavfooter li span {
-    margin: 0 3.75px
-}
-
-.homeleftnavfooter li a {
-    color: #65676B;
-}
-
-.homeleftnavfooter li a:hover {
-    text-decoration: underline;
-}
 
 @media screen and (max-width:1300px) {
     .homeleftnavlist a div img {

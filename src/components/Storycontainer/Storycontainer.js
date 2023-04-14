@@ -3,8 +3,9 @@ import "./Storycontainer.css"
 import { useState } from 'react'
 import Storyset from "./Storyset/Storyset";
 import Reelsset from "./Reelsset/Reelsset";
-const Storycontainer = () => {
+const Storycontainer = (props) => {
   const [storytitle,setStorytitle]=useState(1);
+
   return (
     <div className='storycontainer'>
       <div className='storycontainertitle'>
@@ -22,7 +23,7 @@ const Storycontainer = () => {
         </div>
       </div>
        <div className='storyset'>
-         {storytitle===1?<Storyset/>:<Reelsset/>}
+         {storytitle===1?<Storyset storylist={props.storylist} profile={props.profile}/>:<Reelsset/>}
        </div>
     </div>
   )

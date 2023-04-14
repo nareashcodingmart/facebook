@@ -8,7 +8,7 @@ import Marketpage from '../Marketpage/Marketpage';
 import Groupspage from "../Groupspages/Groupspage"
 import Gamespage from "../Gamespage/Gamepage"
 import Profilepage from '../Profilepage/Profilepage';
-const Home = (props) => {
+const Home = () => {
   return (
     <div>
       <Hometopnav />
@@ -23,8 +23,6 @@ const Home = (props) => {
           <Route path="/profile" element={<Profilepage/>}/>
           <Route path="/profile/:id" element={<Profilepage/>}/>
         </Routes>
-
-        <button onClick={props.changedisplay}>logout</button>
       </div>
     </div>
 

@@ -1,0 +1,98 @@
+.postcomponent{
+    background-color: white;
+    border-radius: 10px;
+}
+.posttitle{
+    padding: 11px 15px 0 15px;
+    display: flex;
+}
+.posttitledp span{
+border-radius: 50px;
+border: 2px solid #1B75E5;
+}
+.posttitledp span img{
+    border-radius: 50px;
+    width: 32px;
+    height: 32px;
+    border: 2px solid #fff;
+}
+.posttitleidname{
+    width: 350px;
+    box-sizing: border-box;
+    padding-left: 9px;
+    padding-top: 1px;
+    display: flex;
+    flex-direction: column;
+    gap:4px;
+  
+}
+.posttitleidnamefirst{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+  
+}
+.posttitleidnamesecond{
+    display: flex;
+    align-items: center;
+    gap:4px;
+    color:#7B7D80;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+   
+}
+.posttitleidnamepublic{
+display: flex;    
+}
+.posttitleidnamepublic svg{
+    width: 12px;
+    height: 12px;
+}
+
+.postverified{
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yP/r/9mtMHUuH7nj.png);
+    background-position: -166px -147px;
+    background-size: auto;
+    width: 12px;
+    height: 12px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-top: -1px;
+}
+.posttitlebuttonfirst,.posttitlebuttonsecond{
+    width: 36px;
+    height: 36px;
+    border-radius: 50px;
+    color: #797D84;
+}
+.posttitlebuttonfirst:hover,.posttitlebuttonsecond:hover{
+    background-color: #F1F2F4;
+}
+.posttitlebuttonfirst svg{
+width: 20px;
+height:20px;
+}
+.posttitlebuttonsecond i{
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yP/r/9mtMHUuH7nj.png);
+    background-position: 0px -105px;
+    background-size: auto;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    display: inline-block;
+
+    -webkit-filter:invert(39%) sepia(21%) saturate(200%) saturate(109.5%) hue-rotate(174deg) brightness(94%) contrast(86%);
+}
+.clusor{
+    cursor: pointer;
+}
+.underlinehover:hover{
+    text-decoration: underline;
+}
+.displayflexcenter{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}

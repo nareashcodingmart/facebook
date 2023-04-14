@@ -12,3 +12,10 @@ export const Contactlist=async(setList)=>{
         setList(res.data)
       }
 }
+export const Storylist=async(setStory)=>{
+  let res=await Apicall("get","","story");
+  if(res.status===200){
+    console.log(res.data.result)
+    setStory(res.data.result)
+  }
+}

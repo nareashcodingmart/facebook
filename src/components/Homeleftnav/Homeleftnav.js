@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "./Homeleftnav.css";
 import { Leftnavlist,Footerlist} from '../../Util/Homeleftnav.js/Homeleftnav';
 import { Homeleftnavlist } from '../../Assert/Homeleftnav/Homeleftnav';
+import Fotterpagehome from '../Fotterpagehome/Fotterpagehome';
 const Homeleftnav = (props) => {
   
   console.log(props.profile)
@@ -30,12 +31,9 @@ const Homeleftnav = (props) => {
         </div>
       </div>
       <div className='homeleftnavline'></div>
-      <div className='homeleftnavfooter'>
-        {Footerlist()}
-        <li>More <span>.</span></li>
-        <li>Meta © 2023</li>
-      </div>
-
+      <div className='homeleftnavfotter'>
+      <Fotterpagehome/>
+</div>
     </div>
 
 

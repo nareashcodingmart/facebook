@@ -4,7 +4,7 @@ import Loginform from '../../components/Loginform/Loginform';
 import Fotter from '../../components/Fotter/Fotter';
 import Signup from '../../components/Signupdialogbox/Signup';
 import "./Loginpages.css";
-const Loginpages = (props) => {
+const Loginpages = () => {
   const [signup, setSignup] = useState(false);
   const dialogbox = () => {
     setSignup(signup===true?false:true);
@@ -19,7 +19,7 @@ const Loginpages = (props) => {
           <h2>Facebook helps you connect and share with the people in your life.</h2>
         </div>
         <div>
-          <Loginform changedisplay={props.changedisplay}  dialogbox={dialogbox} />
+          <Loginform  dialogbox={dialogbox} />
           <div className='createpage-login'>
             <Link to="">Create a Page</Link> for a celebrity, brand or business.
           </div>

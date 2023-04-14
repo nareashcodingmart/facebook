@@ -3,9 +3,10 @@ import "./Loginform.css";
 import { Link} from 'react-router-dom';
 import Inbutbox from "../Inputbox/Inbutbox"
 import Apicall from "../../Request/Apicall"
-// import dialogbox from '../../Util/dialogbox';
+import {Context} from "../../App"
+import { useContext } from 'react';
 const Loginform = (props) => {
- 
+  const [login,setLogin]=useContext(Context)
   const [logindata,setLogindata]=useState({
     email:"",
     password:""
@@ -19,7 +20,7 @@ const Loginform = (props) => {
     let res=await Apicall("post",logindata,"login")
        if(res.status===201){
       localStorage.setItem("token",res.data.message)
-      props.changedisplay();
+      setLogin(1);
        }
       }
 

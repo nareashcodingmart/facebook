@@ -2,16 +2,16 @@ import React from 'react'
 import Homeleftnav from '../../components/Homeleftnav/Homeleftnav'
 import "./Homecontent.css"
 import Homecontact from '../../components/Homecontact/Homecontact'
-import { useState,useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import { Contactlist, Profile } from '../../Util/Getdata/getdata'
 import Postcontainer from '../../components/Postcontainer/Postcontainer'
 const Homecontent = () => {
   const [data, setData] = useState(0)
   const [profile, setProfile] = useState(0);
-  useEffect(()=>{
-      Profile(setProfile);
+  useEffect(() => {
+    Profile(setProfile);
     Contactlist(setData);
-  },[])
+  }, [])
   return (
     <div className='homecontent'>
 
@@ -22,7 +22,7 @@ const Homecontent = () => {
         <Postcontainer/>
       </div>
       <div className='homecontactlist'>
-        {data !== 0 ? <Homecontact contactlist={data} /> : <></>}
+        <Homecontact contactlist={data} />
       </div>
 
     </div>

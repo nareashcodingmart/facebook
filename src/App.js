@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
 import Home from './pages/Homepage/Home'
 import Loginpages from './pages/Loginpages/Loginpages'
+import { createContext } from 'react';
+export const Context=createContext();
 const App = () => {
   
   let [login, setLogin] = useState(1);
-  const changedisplay = () => {
-    setLogin(login === 0 ? 1 : 0)
-  }
- 
   return (
 
     <>
+    <Context.Provider value={[login,setLogin]}>
       {
-        login === 0 ? <Loginpages changedisplay={changedisplay} /> : <Home changedisplay={changedisplay} />
+        login === 0 ? <Loginpages/> : <Home/>
       }
+      </Context.Provider>
     </>
   )
 }
