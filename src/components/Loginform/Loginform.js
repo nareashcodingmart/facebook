@@ -6,7 +6,7 @@ import Apicall from "../../Request/Apicall"
 import {Context} from "../../App"
 import { useContext } from 'react';
 const Loginform = (props) => {
-  const [login,setLogin]=useContext(Context)
+  const [setLogin]=useContext(Context)
   const [logindata,setLogindata]=useState({
     email:"",
     password:""

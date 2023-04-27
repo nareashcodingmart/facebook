@@ -6,7 +6,7 @@ import {Context} from "../../../App";
 import { useContext } from 'react';
 import {Logout}from "../../../Util/Home/Home"
 const Homeprofileaccount = () => {
-    const [login,setLogin]=useContext(Context);
+    const [setLogin]=useContext(Context);
   return (
     <>
       <div className='homeprofilecontainer'>

@@ -3,3 +3,26 @@
     padding: 0;
     text-decoration: none;
 }
+:root{
+    --bodycolor:#E8EBEF;
+--bluecolor:#1877f2;
+--font:Arial, Helvetica, sans-serif;
+
+}
+.clusor{
+    cursor: pointer;
+}
+.underlinehover:hover{
+    text-decoration: underline;
+}
+.displayflexcenter{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+#displaynone{
+    display:none
+}
+#displayblock{
+    display: block;
+}

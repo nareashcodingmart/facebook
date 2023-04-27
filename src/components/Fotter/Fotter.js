@@ -17,7 +17,7 @@ const Fotter = () => {
           <li> <Link to="">ਪੰਜਾਬੀ</Link></li>
           <li> <Link to="">বাংলা</Link></li>
           <li> <Link to="">ગુજરાતી</Link></li>
-          <li> <Link to=""><i class="img sp_h4Swrc8tiWJ sx_8ed39e"></i></Link></li>
+          <li> <Link to=""><i></i></Link></li>
         </ul>
         <div className='loginpage-bottom-line'></div>
         <div className='loginpage-bottom-link'>

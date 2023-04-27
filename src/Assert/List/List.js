@@ -70,3 +70,57 @@ export const mutalfri=[
         img:"https://scontent.fmaa2-3.fna.fbcdn.net/v/t39.30808-1/316665420_3288005318194665_5439118104013943578_n.jpg?stp=cp0_dst-jpg_p32x32&_nc_cat=109&ccb=1-7&_nc_sid=7206a8&_nc_ohc=k19INY_8vC0AX9ZDwNr&_nc_ht=scontent.fmaa2-3.fna&oh=00_AfDsRTrRmTofKl-NL2Gpq7qfBJxt4A2JNeY_-1bD4wc2QA&oe=64395202"
     },
 ]
+
+export const Reactionlist= [
+{ 
+    id: "like",
+    img: "http://i.imgur.com/LwCYmcM.gif",
+    name:"Like",
+    color:"blue",
+    icon:""
+},
+{ 
+    id: "love", 
+    img: "http://i.imgur.com/k5jMsaH.gif",
+    name:"Love",
+    color:"red",
+    icon:"https://res.cloudinary.com/dym5bpsql/image/upload/v1681792972/love_tseyto.svg"
+},
+{ 
+    id: "care", 
+    img: "http://i.imgur.com/a44ke8c.gif",
+    name:"Care",
+    color:"yellow",
+    icon:"https://res.cloudinary.com/dym5bpsql/image/upload/v1681792641/care_dew4e9.svg"
+},
+{
+    id: "haha", 
+    img: "http://i.imgur.com/f93vCxM.gif",
+    name:"Haha",
+    color:"yellow",
+    icon:"https://res.cloudinary.com/dym5bpsql/image/upload/v1681793010/haha_quyozc.svg"
+},
+
+{ 
+    id: "wow", 
+    img: "http://i.imgur.com/9xTkN93.gif",
+    name:"Wow",
+    color:"yellow",
+    icon:"https://res.cloudinary.com/dym5bpsql/image/upload/v1681792795/wow_bq3od5.svg"
+},
+{ 
+    id: "sad", 
+    img: "http://i.imgur.com/tFOrN5d.gif",
+    name:"Sad",
+    color:"yellow",
+    icon:"https://res.cloudinary.com/dym5bpsql/image/upload/v1681792826/sad_ekehu1.svg"
+},
+{ 
+    id:"angry", 
+    img: "http://i.imgur.com/1MgcQg0.gif",
+    name:"Angry",
+    color:"darkyellow",
+    icon:"https://res.cloudinary.com/dym5bpsql/image/upload/v1681792875/sad_sl9wap.svg"
+},
+]
+export const Postedarr=[];

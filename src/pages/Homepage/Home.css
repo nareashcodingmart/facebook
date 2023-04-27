@@ -1,4 +1,5 @@
 .body{
-    height: 800px;
+    height:fit-content;
+    min-height: 110vh;
     background-color:#F1F2F4;
 }

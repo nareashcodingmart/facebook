@@ -1,6 +1,8 @@
 .postcomponent{
-    background-color: white;
+    background-color:white;
     border-radius: 10px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .1), 0 2px 2px rgba(0, 0, 0, .1);
+    display: absolute;
 }
 .posttitle{
     padding: 11px 15px 0 15px;
@@ -50,7 +52,6 @@ display: flex;
     width: 12px;
     height: 12px;
 }
-
 .postverified{
     background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yP/r/9mtMHUuH7nj.png);
     background-position: -166px -147px;
@@ -85,14 +86,56 @@ height:20px;
 
     -webkit-filter:invert(39%) sepia(21%) saturate(200%) saturate(109.5%) hue-rotate(174deg) brightness(94%) contrast(86%);
 }
-.clusor{
-    cursor: pointer;
+.postcontent1{
+    padding:4px 16px 4px;
+    font-family: var(--font);
+    font-size: 15px;
 }
-.underlinehover:hover{
-    text-decoration: underline;
+.postcontent2 img,.postcontent2{
+    height: 625px;
+
 }
-.displayflexcenter{
+.postemotion{
+    display: flex;
+    height: 43px;
+    margin: 0 16px;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(216, 205, 205);
+}
+.postemotionleft,.postemotionright{
     display:flex;
     align-items: center;
-    justify-content: center;
+    font-family: var(--font);
+    font-size: 15px;
 }
+.postemotionleftspan{
+    margin-left: 5px;
+}
+.postemotionleft img{
+    height: 18px;
+    width: 18px;
+}
+.postshare,.postcomment{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 6px;
+}
+.postshare i,.postcomment i{
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/ym/r/k2J7dFsF8Sd.png);
+    background-size: auto;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    -webkit-filter: invert(39%) sepia(21%) saturate(200%) saturate(109.5%) hue-rotate(174deg) brightness(94%) contrast(86%);
+
+}
+.postshare i{
+    background-position: 0px -650px;
+}
+.postcomment i{
+    background-position: 0px -531px;
+}
+

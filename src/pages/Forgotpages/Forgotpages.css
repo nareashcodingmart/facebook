@@ -1,0 +1,11 @@
+.forgotpagetop{
+    height: 56px;
+    background-color: white;
+}
+.forgotpagecenter{
+    background-color:var(--bodycolor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0px;
+}
