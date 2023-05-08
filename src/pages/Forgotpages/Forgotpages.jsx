@@ -7,9 +7,8 @@ const Forgotpages = () => {
     document.title="Forgotten Password | Can't Log In | Facebook";
   return (
     <div className='forgotpages'>
-      <div className='forgotpagetop'>
         <Forgotpagetop/>
-      </div>
+      
         <div className='forgotpagecenter'>
             <Findaccount/>
         </div>

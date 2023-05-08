@@ -19,3 +19,15 @@ export const Storylist=async(setStory)=>{
     setStory(res.data.result)
   }
 }
+export  const Callapi=async(logindata,setLogin)=>{
+  let res=await Apicall("post",logindata,"login")
+     if(res.status===201){
+    localStorage.setItem("token",res.data.message)
+    setLogin(1);
+     }
+    }
+export  const Valueupdate=(e,data,setData)=>{
+  let obj={...data};
+  obj[e.target.name]=e.target.value;
+  setData(obj);
+}

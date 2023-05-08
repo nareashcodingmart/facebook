@@ -12,7 +12,7 @@ const Postcomponent = (props) => {
     <div className='postcomponent'key={props.value} >
       <div className='posttitle'>
         <div className='posttitledp displayflexcenter'>
-          <span className='clusor displayflexcenter'><img src="https://scontent.fcjb3-2.fna.fbcdn.net/v/t39.30808-1/245011896_4677551782292419_1092874359377098830_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=1&ccb=1-7&_nc_sid=1eb0c7&_nc_ohc=eSxCPlhJFdkAX--uK1L&_nc_ht=scontent.fcjb3-2.fna&oh=00_AfAGWuwTHdiZMpmSJXWbgkeH4Ufl2thzQEcwaWW8-VPdyA&oe=643C7F7B" alt="" /></span>
+          <span className='clusor displayflexcenter'><img src="https://res.cloudinary.com/dfvkaaj5l/image/upload/v1677646711/samples/ecommerce/analog-classic.jpg" alt="" /></span>
         </div>
         <div className='posttitleidname'>
           <div className='posttitleidnamefirst '>
@@ -36,10 +36,12 @@ const Postcomponent = (props) => {
 
       </div>
       <div className='postcontent1'>
-        Kodiveri
+        {/* Kodiveri */}
       </div>
       <div className='postcontent2'>
-        <img src="https://scontent.fixm4-3.fna.fbcdn.net/v/t39.30808-6/341629336_592940066228885_5421658168947172271_n.jpg?stp=dst-jpg_s640x640&_nc_cat=1&ccb=1-7&_nc_sid=730e14&_nc_ohc=RYhSulC4Z2kAX9TXJJL&_nc_ht=scontent.fixm4-3.fna&oh=00_AfDJtIH-Yenc5TMgXQguWN1RkwZyoa9aZrQ0JbzDah46Zw&oe=64411305" alt="" />
+        {/* <img src="https://res.cloudinary.com/dym5bpsql/image/upload/v1683541352/post_scehdd.jpg"alt="" /> */}
+        <img src="https://res.cloudinary.com/dfvkaaj5l/image/upload/v1677646723/samples/animals/kitten-playing.gif"alt="" />
+
       </div>
       <div className='postemotion'>
         <div className='postemotionleft' id="gray">

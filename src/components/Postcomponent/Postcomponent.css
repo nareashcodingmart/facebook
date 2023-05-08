@@ -93,7 +93,7 @@ height:20px;
 }
 .postcontent2 img,.postcontent2{
     height: 625px;
-
+    width: 500px;
 }
 .postemotion{
     display: flex;

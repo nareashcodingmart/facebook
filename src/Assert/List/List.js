@@ -123,4 +123,53 @@ export const Reactionlist= [
     icon:"https://res.cloudinary.com/dym5bpsql/image/upload/v1681792875/sad_sl9wap.svg"
 },
 ]
-export const Postedarr=[];
+export const Leftnavigatewatch=[
+    {
+        name:"Home",
+        class:"leftnavigatewatchhome",
+        class1:"leftnavigatewatchtag",
+        class2:"leftnavigatewatchicon",
+        class3:"watchtaghomeselected",
+        link:"/watch"
+    },
+    {
+        name:"Live",
+        class:"leftnavigatewatchlive",
+        class1:"leftnavigatewatchtag",
+        class2:"leftnavigatewatchicon",
+        class3:"watchtagliveselected",
+        link:"/watch/live"
+    },
+    {
+        name:"Reels",
+        class:"leftnavigatewatchreels",
+        class1:"leftnavigatewatchtag",
+        class2:"leftnavigatewatchicon",
+        class3:"watchtagreelsselected",
+        link:"/watch/reels"
+    },
+    {
+        name:"Music",
+        class:"leftnavigatewatchmusic",
+        class1:"leftnavigatewatchtag",
+        class2:"leftnavigatewatchicon",
+        class3:"watchtagmusicselected",
+        link:"/watch/music"
+    },
+    {
+        name:"Shows",
+        class:"leftnavigatewatchshows",
+        class1:"leftnavigatewatchtag",
+        class2:"leftnavigatewatchicon",
+        class3:"watchtagshowsselected",
+        link:"/watch/shows"
+    },
+    {
+        name:"Saved Videos",
+        class:"leftnavigatewatchsaved",
+        class1:"leftnavigatewatchtag",
+        class2:"leftnavigatewatchicon",
+        class3:"watchtagsavedselected",
+        link:"/watch/saved"
+    },
+]

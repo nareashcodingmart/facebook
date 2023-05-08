@@ -21,7 +21,7 @@ const Loginpages = () => {
         <div>
           <Loginform  dialogbox={dialogbox} />
           <div className='createpage-login'>
-            <Link to="">Create a Page</Link> for a celebrity, brand or business.
+            <Link to="" className="underlinehover-+63+">Create a Page</Link> for a celebrity, brand or business.
           </div>
         </div>
       </div>

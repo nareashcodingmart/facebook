@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import Home from './pages/Homepage/Home'
-import Loginpages from './pages/Loginpages/Loginpages'
+import Loginpagesrouter from './pages/Loginpages/Loginpagesrouter'
 import { createContext } from 'react';
-// import Forgotpages from './pages/Forgotpages/Forgotpages';
 export const Context=createContext();
 const App = () => {
   
@@ -12,11 +11,11 @@ const App = () => {
     <>
     <Context.Provider value={[setLogin]}>
       {
-        login === 0 ? <Loginpages/> : <Home/>
+        login === 0 ? <Loginpagesrouter/> : <Home/>
       }
       </Context.Provider>
     </>
-    // <Forgotpages/>
+  
   )
 }
 

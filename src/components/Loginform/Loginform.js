@@ -2,9 +2,9 @@ import React,{useState} from 'react';
 import "./Loginform.css";
 import { Link} from 'react-router-dom';
 import Inbutbox from "../Inputbox/Inbutbox"
-import Apicall from "../../Request/Apicall"
 import {Context} from "../../App"
 import { useContext } from 'react';
+import {Callapi,Valueupdate} from "../../Util/Getdata/getdata"
 const Loginform = (props) => {
   const [setLogin]=useContext(Context)
   const [logindata,setLogindata]=useState({
@@ -12,26 +12,18 @@ const Loginform = (props) => {
     password:""
   })
   const valueupdate=(e)=>{
-    let obj={...logindata};
-    obj[e.target.name]=e.target.value;
-    setLogindata(obj);
+    Valueupdate(e,logindata,setLogindata)
   }
-  const callapi=async()=>{
-    let res=await Apicall("post",logindata,"login")
-       if(res.status===201){
-      localStorage.setItem("token",res.data.message)
-      setLogin(1);
-       }
-      }
-
-  
+  const callapi=()=>{
+Callapi(logindata,setLogin)
+  }  
   return (
     <div className='loginpage-right'>
     <Inbutbox placeholder="Email address or phone number" className={"login-id"} type={"text"} focus="1" onchange={valueupdate} name="email" value={logindata.email} />
     <Inbutbox placeholder="Password" className="login-id" type="password"onchange={valueupdate} name="password" value={logindata.password}/>
     <Inbutbox className="login-button" type="button" value="Log in" onclick={callapi}/>
     <div className='forgot-container'>
-      <Link to=""> Forgotten password?</Link>
+      <Link to="forgotpage" className="underlinehover"> Forgotten password?</Link>
     </div>
     <div className='login-line'></div>
      <div  className='create-button'>

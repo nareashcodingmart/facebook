@@ -17,6 +17,7 @@ const Home = () => {
         <Routes>
           <Route path='/' element={<Homecontent />} />
           <Route path="/watch" element={<Watchpage />} />
+          <Route path="/watch/:id" element={<Watchpage/>}/>
           <Route path="/marketplace" element={<Marketpage />} />
           <Route path="/groups" element={<Groupspage />} />
           <Route path="/gaming" element={<Gamespage />} />
