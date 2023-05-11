@@ -6,7 +6,7 @@ import { Leftnavigatewatch } from '../../Assert/List/List'
 const Leftnavigate = () => {
   return (
     <div className='leftnavigate'>
-      <Leftnavigatetop name="Watch" search="videos"/>
+      <Leftnavigatetop name="Watch" search="videos" input={1}/>
       <div className='leftnavigatecontent'>
 {
   Leftnavigatelist(Leftnavigatewatch)

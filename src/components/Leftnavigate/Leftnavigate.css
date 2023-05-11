@@ -2,32 +2,32 @@
     background-color:#fff;
     width: 360px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
-    height: calc(100vmin - 56px);
     position:fixed;
-    overflow-y:hidden;
 }
-.leftnavigate:hover{
+.leftnavigatecontent{
+    height: calc(100vmin - 160px);
+    padding:3px 8px;
+    overflow: hidden;
+}
+.leftnavigatecontent:hover{
     overflow-y:auto;
     overflow-x: hidden;
 }
-.leftnavigate::-webkit-scrollbar {
+.leftnavigatecontent::-webkit-scrollbar {
     width: 16px;
 }
 
-.leftnavigate::-webkit-scrollbar-track {
+.leftnavigatecontent::-webkit-scrollbar-track {
     background: transparent
 }
 
-.leftnavigate::-webkit-scrollbar-thumb {
+.leftnavigatecontent::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 100px;
     border-left: 3px solid #F1F2F4;
     border-right: 5px solid #f1f2f4
 }
-.leftnavigatecontent{
-    margin-top:100px;
-    padding:5px 8px;
-}
+
 .leftnavigatewatchtag{
     display: flex;
     gap: 12px;
@@ -35,6 +35,9 @@
     height: 52px;
     border-radius: 8px;
     padding: 0 8px;
+    color: black;
+    font-family: var(--font);
+    font-size: 15px;
 }
 .leftnavigatewatchtag:hover{
     background-color: #F0F3F4;  
@@ -81,11 +84,6 @@
     justify-content: center;
     border-radius: 50px;
     background-color: #E4E6EB ;
-}
-.leftnavigatecontent a{
-    color: black;
-    font-family: var(--font);
-    font-size: 15px;
 }
 .tagselected div{
     background-color: #F0F3F4;  

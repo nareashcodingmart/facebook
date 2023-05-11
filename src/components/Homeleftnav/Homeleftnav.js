@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import "./Homeleftnav.css";
-import { Leftnavlist,Footerlist} from '../../Util/Homeleftnav.js/Homeleftnav';
+import { Leftnavlist} from '../../Util/Homeleftnav.js/Homeleftnav';
 import { Homeleftnavlist } from '../../Assert/Homeleftnav/Homeleftnav';
 import Fotterpagehome from '../Fotterpagehome/Fotterpagehome';
-const Homeleftnav = (props) => {
-  
-  console.log(props.profile)
-  Homeleftnavlist[0].img=props.profile.profile;
-  Homeleftnavlist[0].name=`${props.profile.first_name} ${props.profile.last_name}`;
+import { observer } from 'mobx-react';
+import {store} from "../../Mobx"
+const Homeleftnav = () => {
+  Homeleftnavlist[0].img=store.Profile.profile;
+  Homeleftnavlist[0].name=`${store.Profile.first_name} ${store.Profile.last_name}`;
   console.log(Homeleftnavlist)
   const [leftnav, setLeftnav] = useState(0);
   return (
@@ -40,5 +40,5 @@ const Homeleftnav = (props) => {
   )
 }
 
-export default Homeleftnav
+export default observer(Homeleftnav)
 

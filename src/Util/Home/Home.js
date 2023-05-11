@@ -1,6 +1,7 @@
-export const Logout=(setLogin)=>{
+export const Logout=(store)=>{
     localStorage.removeItem("token");
-    setLogin(0);
+    
+    store.Login=0;
 }
 export const Dropdown=(state,setState,n)=>{
     let arr = state.map(i => i);
@@ -61,6 +62,6 @@ export const Postarr=(state,setState)=>{
         obj.arr.push(k+i)
     }
     setState(obj) 
-},2000)
+},1000)
     
 }

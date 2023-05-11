@@ -1,15 +1,15 @@
 import Apicall from "../../Request/Apicall";
-export const Profile=async(setProfile)=>{
+export const Profile=async(store)=>{
       let res= await Apicall("get","","getuser");
       if(res.status===200)
       {
-          setProfile(res.data[0])   
+        store.Profile=res.data[0]  
       }
 }
-export const Contactlist=async(setList)=>{
+export const Contactlist=async(store)=>{
     let res = await Apicall("get", "", "friends/suggestions");
       if (res.status === 201) {
-        setList(res.data)
+        store.Contactlist=res.data
       }
 }
 export const Storylist=async(setStory)=>{
@@ -19,11 +19,11 @@ export const Storylist=async(setStory)=>{
     setStory(res.data.result)
   }
 }
-export  const Callapi=async(logindata,setLogin)=>{
+export  const Callapi=async(logindata,store)=>{
   let res=await Apicall("post",logindata,"login")
      if(res.status===201){
     localStorage.setItem("token",res.data.message)
-    setLogin(1);
+    store.Login=1;
      }
     }
 export  const Valueupdate=(e,data,setData)=>{

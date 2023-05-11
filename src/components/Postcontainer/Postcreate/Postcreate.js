@@ -3,16 +3,18 @@ import "./Postcreate.css"
 import Postdialog from "./Postdialog/Postdialog"
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-const Postcreate = (props) => {
+import { observer } from 'mobx-react'
+import {store} from "../../../Mobx"
+const Postcreate = () => {
   const [postopen,setPostopen]=useState(false);
   const [postfeel,setPostfeel]=useState(false);
   return (
     <div className='postcreatecontainer'>
        <div className='postcreatecontainertop'>
         <Link to="profile" className="postcreateprofile">
-            <img src={props.profile!==0?props.profile.profile:null}alt=""/>
+            <img src={store.Profile!==0?store.Profile.profile:null}alt=""/>
         </Link>
-        <div className='postcreateline' onClick={()=>setPostopen(1)}> What's on your mind, {props.profile.first_name} {props.profile.last_name}?</div>
+        <div className='postcreateline' onClick={()=>setPostopen(1)}> What's on your mind, {store.Profile.first_name} {store.Profile.last_name}?</div>
        </div>
        <div className='postline' ></div>
        <div className='postcreatecontainerbottom'>
@@ -25,4 +27,4 @@ const Postcreate = (props) => {
   )
 }
 
-export default Postcreate
+export default observer(Postcreate)

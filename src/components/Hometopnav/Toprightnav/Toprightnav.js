@@ -1,18 +1,15 @@
 import "./Toprightnav.css"
 import React, { useState } from 'react'
-import { Profile } from '../../../Util/Getdata/getdata';
-import { useEffect } from 'react';
 import Homeprofileaccount from "../../Dropdown/Homeprofileacount/Homeprofileaccount";
 import Notification from "../../Dropdown/Notification/Notification"
 import Menu from "../../Dropdown/Menu/Menu"
 import Message from "../../Dropdown/Message/Message"
 import { Dropdown } from "../../../Util/Home/Home";
+import { observer } from "mobx-react";
+import {store} from "../../../Mobx"
 const Toprightnav = () => {
-    const [profile, setProfile] = useState(0);
     const [dropdown,setDropdown]=useState([0,0,0,0])
-    useEffect(() => {
-        Profile(setProfile);
-    },[]);
+   
     return (
         <div className='topnav-3'>
             <div className='homemenu topnavrightbutton'>
@@ -36,7 +33,7 @@ const Toprightnav = () => {
             </div>
             <span className='hover'>Notification</span>
             <div className='homeaccount' >
-                <img src={profile !== 0 ? profile.profile : null} alt="" onClick={()=>{Dropdown(dropdown,setDropdown,0)}}/>
+                <img src={store.Profile !== 0 ? store.Profile.profile : null} alt="" onClick={()=>{Dropdown(dropdown,setDropdown,0)}}/>
             </div>
             <span className='hover'>Account</span>
             {
@@ -63,4 +60,4 @@ const Toprightnav = () => {
     )
 }
 
-export default Toprightnav
+export default observer(Toprightnav)

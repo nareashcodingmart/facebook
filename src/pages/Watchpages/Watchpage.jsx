@@ -14,7 +14,7 @@ const Watchpage = () => {
       <div className='leftnavwatch'>
         <Leftnavigate />
       </div>
-      <div>
+      <div className='watchpagerightside'>
       {
         id===undefined &&<Homewatch/>
       }

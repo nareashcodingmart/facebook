@@ -2,17 +2,16 @@ import React from 'react'
 import "./Homeprofileaccount.css"
 import { Link } from "react-router-dom";
 import Fotterpagehome from "../../Fotterpagehome/Fotterpagehome";
-import {Context} from "../../../App";
-import { useContext } from 'react';
+import { observer } from 'mobx-react';
+import {store} from "../../../Mobx"
 import {Logout}from "../../../Util/Home/Home"
 const Homeprofileaccount = () => {
-    const [setLogin]=useContext(Context);
   return (
     <>
       <div className='homeprofilecontainer'>
                         <Link to="profile">
-                            <img src="https://scontent.fmaa2-3.fna.fbcdn.net/v/t39.30808-1/276202347_2150814471771966_507197277566496472_n.jpg?stp=cp0_dst-jpg_p60x60&_nc_cat=103&ccb=1-7&_nc_sid=7206a8&_nc_ohc=f0azdKq-UMUAX8GQKde&_nc_ht=scontent.fmaa2-3.fna&oh=00_AfBV8RkEXcHa_3BsmePeKSGzLrVliOHpc8te_FfFIKTWfw&oe=64393D43" alt="" />
-                            <div>Nareash Kumar</div>
+                            <img src={store.Profile !== 0 ? store.Profile.profile : null} alt="" />
+                            <div>{store.Profile.first_name} {store.Profile.last_name}</div>
                         </Link>
                     
                     <div className='homeprofileline'>
@@ -45,7 +44,7 @@ const Homeprofileaccount = () => {
                         <span>Give feedback</span>
                     </div>
                 </div>
-                <div className="homeprofilesettingbutton" onClick={()=>{Logout(setLogin)}}>
+                <div className="homeprofilesettingbutton" onClick={()=>{Logout(store)}}>
                     <div className="homeprofilesettingicon"><i className="homeprofilelogiconimg homeprofileiconcommon"></i></div>
                     <div className="homeprofilearrowicon">
                         <span>Log Out</span>
@@ -56,4 +55,4 @@ const Homeprofileaccount = () => {
   )
 }
 
-export default Homeprofileaccount
+export default observer(Homeprofileaccount)

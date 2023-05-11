@@ -79,7 +79,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
     padding: 8px 16px;
     height:fit-content !important;
-    max-height: calc(100vh - 105px) !important;
+    max-height: calc(100vmin - 60px) !important;
     width: 360px;
     gap: 0px !important;
     display: flex;

@@ -11,6 +11,8 @@ import About from '../../components/Profilenavpages/pages/About/About';
 import Friend from '../../components/Profilenavpages/pages/Friend/Friend';
 import Videos from '../../components/Profilenavpages/pages/Video/Video';
 import Sports from '../../components/Profilenavpages/pages/Sports/Sports';
+import {store} from "../../Mobx"
+import { observer } from 'mobx-react';
 const Profilepage = () => {
   const {id}=useParams();
   const [profile, setProfile] = useState(0)
@@ -32,14 +34,14 @@ const Profilepage = () => {
         </div>
         <div className="profileviewcontainer">
           <div className="profileviewleft">
-            <img src="https://scontent.fmaa2-3.fna.fbcdn.net/v/t39.30808-1/276202347_2150814471771966_507197277566496472_n.jpg?stp=dst-jpg_p200x200&_nc_cat=103&ccb=1-7&_nc_sid=7206a8&_nc_ohc=NbVhougNw10AX-_3WJj&_nc_ht=scontent.fmaa2-3.fna&oh=00_AfChY8eCrhRRmEgt0seRLHNEWH5jt-HZxr5mBFcMC9Ew5Q&oe=64393D43" alt="" />
+            <img src={store.Profile !== 0 ? store.Profile.profile : null} alt="" />
             <div className="profileviewchangeicon" onClick={() => setOpen(true)}>
               <span></span>
             </div>
           </div>
           <div className="profileviewright">
             <div className="profileviewrightleft">
-              <h1>Nareash Kumar</h1>
+              <h1>{store.Profile.first_name} {store.Profile.last_name}</h1>
               <Link to="">600 friends</Link>
               <div>{Mutualfrilist(mutalfri)}</div>
             </div>
@@ -90,4 +92,4 @@ const Profilepage = () => {
   )
 }
 
-export default Profilepage
+export default observer(Profilepage)

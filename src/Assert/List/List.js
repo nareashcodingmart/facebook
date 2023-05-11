@@ -173,3 +173,41 @@ export const Leftnavigatewatch=[
         link:"/watch/saved"
     },
 ]
+export const Leftnavigatefriend=[
+    {
+        name:"Home",
+        link:"/friends",
+        arrow:0,
+        class1:"homefriendicon"
+    },
+    {
+        name:"Friend Requests",
+        link:"/friends/requests",
+        arrow:1,
+        class1:"friendrequesticon"
+    },
+    {
+        name:"Suggestions",
+        link:"/friends/suggestions",
+        arrow:1,
+        class1:"suggestionicon"
+    },
+    {
+        name:"All friends",
+        link:'/friends/list',
+        arrow:1,
+        class1:"allfriendicon"
+    },
+    {
+        name:"Birthdays",
+        link:"/friends/birthdays",
+        arrow:0,
+        class1:"birthdayicon"
+    },
+    {
+        name:"Custom Lists",
+        link:"/friends/friendlist",
+        arrow:1,
+        class1:"customlisticon"
+    }
+]

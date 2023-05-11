@@ -2,31 +2,30 @@ import React from 'react'
 import Homeleftnav from '../../components/Homeleftnav/Homeleftnav'
 import "./Homecontent.css"
 import Homecontact from '../../components/Homecontact/Homecontact'
-import { useState, useEffect } from 'react'
-import { Contactlist, Profile } from '../../Util/Getdata/getdata'
+import {useEffect } from 'react'
+import { Contactlist} from '../../Util/Getdata/getdata'
 import Postcontainer from '../../components/Postcontainer/Postcontainer'
+import { observer } from 'mobx-react'
+import {store} from "../../Mobx"
 const Homecontent = () => {
-  const [data, setData] = useState(0)
-  const [profile, setProfile] = useState(0);
   useEffect(() => {
-    Profile(setProfile);
-    Contactlist(setData);
+    Contactlist(store);
   }, [])
   return (
     <div className='homecontent'>
 
       <div className='homeleftnav-outer'>
-        {profile !== 0 ? <Homeleftnav profile={profile} /> : <></>}
+        <Homeleftnav/> 
       </div>
       <div>
         <Postcontainer/>
       </div>
       <div className='homecontactlist'>
-        <Homecontact contactlist={data} />
+        <Homecontact/>
       </div>
 
     </div>
   )
 }
 
-export default Homecontent
+export default observer(Homecontent)

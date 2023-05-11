@@ -21,7 +21,7 @@
     padding: 0 16px 13px;
     width:360px;
     box-sizing: border-box;
-    position:fixed;
+    /* position:fixed; */
     background-color: #fff;
 }
 .leftnavigatetopheader{

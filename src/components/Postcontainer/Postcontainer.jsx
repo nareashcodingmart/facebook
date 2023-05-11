@@ -3,7 +3,7 @@ import "./Postcontainer.css"
 import Storycontainer from '../Storycontainer/Storycontainer'
 import Postcreate from './Postcreate/Postcreate'
 import { useEffect, useState } from 'react'
-import { Storylist, Profile } from '../../Util/Getdata/getdata'
+import { Storylist} from '../../Util/Getdata/getdata'
 import { Postarr } from '../../Util/Home/Home'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import Postcomponent from '../Postcomponent/Postcomponent'
@@ -14,9 +14,7 @@ const Postcontainer = () => {
     hasMore: true
   })
   const [story, setStory] = useState(0)
-  const [profile, setProfile] = useState(0)
   useEffect(() => {
-    Profile(setProfile);
     Storylist(setStory)
   }, [])
   console.log(postarr.arr)
@@ -29,8 +27,8 @@ const Postcontainer = () => {
       endMessage={<h4>not found</h4>}
     >
       <div className='postcontainer'>
-        <Storycontainer storylist={story} profile={profile} />
-        <Postcreate profile={profile} />
+        <Storycontainer storylist={story} />
+        <Postcreate/>
         {postarr.arr.map((i) => (
           <Postcomponent key={i} />
         ))

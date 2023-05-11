@@ -1,8 +1,10 @@
 import React from 'react'
 import "./Homecontact.css"
 import Contactlist from '../Contactlist/Contactlist'
+import {store} from "../../Mobx"
+import { observer } from 'mobx-react'
 // import { ContactList, Grouplist } from "../../Assert/Contactlist/Contactlist"
-const Homecontact =(props) => {
+const Homecontact =() => {
 
   return (
     <div className='homecontact'>
@@ -24,7 +26,7 @@ const Homecontact =(props) => {
 
           </span>
         </div>
-        <Contactlist list={props.contactlist} />
+        <Contactlist list={store.Contactlist} />
       </div>
       <div className='birthdayline'></div>
       <div>
@@ -38,4 +40,4 @@ const Homecontact =(props) => {
   )
 }
 
-export default Homecontact
+export default observer(Homecontact)

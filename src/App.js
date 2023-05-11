@@ -1,22 +1,21 @@
-import React, { useState } from 'react'
+import { observer } from 'mobx-react';
+import {store} from "./Mobx";
+import React from 'react'
 import Home from './pages/Homepage/Home'
 import Loginpagesrouter from './pages/Loginpages/Loginpagesrouter'
 import { createContext } from 'react';
 export const Context=createContext();
-const App = () => {
-  
-  let [login, setLogin] = useState(1);
+const App = () => {  
   return (
 
     <>
-    <Context.Provider value={[setLogin]}>
       {
-        login === 0 ? <Loginpagesrouter/> : <Home/>
+        store.Login === 0 ? <Loginpagesrouter/> : <Home/>
       }
-      </Context.Provider>
     </>
   
   )
 }
 
-export default App
+
+export default observer(App)

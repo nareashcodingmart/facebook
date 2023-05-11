@@ -23,7 +23,7 @@ const Storycontainer = (props) => {
         </div>
       </div>
        <div className='storyset'>
-         {storytitle===1?<Storyset storylist={props.storylist} profile={props.profile}/>:<Reelsset/>}
+         {storytitle===1?<Storyset storylist={props.storylist}/>:<Reelsset/>}
        </div>
     </div>
   )

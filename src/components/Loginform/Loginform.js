@@ -1,12 +1,11 @@
+import { observer } from 'mobx-react';
+import {store} from "../../Mobx"
 import React,{useState} from 'react';
 import "./Loginform.css";
 import { Link} from 'react-router-dom';
 import Inbutbox from "../Inputbox/Inbutbox"
-import {Context} from "../../App"
-import { useContext } from 'react';
 import {Callapi,Valueupdate} from "../../Util/Getdata/getdata"
 const Loginform = (props) => {
-  const [setLogin]=useContext(Context)
   const [logindata,setLogindata]=useState({
     email:"",
     password:""
@@ -15,7 +14,7 @@ const Loginform = (props) => {
     Valueupdate(e,logindata,setLogindata)
   }
   const callapi=()=>{
-Callapi(logindata,setLogin)
+Callapi(logindata,store)
   }  
   return (
     <div className='loginpage-right'>
@@ -34,4 +33,4 @@ Callapi(logindata,setLogin)
   )
 }
 
-export default Loginform
+export default observer(Loginform)
