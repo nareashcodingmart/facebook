@@ -15,6 +15,7 @@ const Forgotpages = () => {
       <div className='forgotpagefotter'>
       <Fotter/>
       </div>
+  
     </div>
   )
 }

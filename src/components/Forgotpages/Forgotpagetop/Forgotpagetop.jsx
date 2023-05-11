@@ -2,11 +2,11 @@ import React,{useState} from 'react'
 import {Link,useNavigate} from "react-router-dom"
 import Inputbox from "../../Inputbox//Inbutbox"
 import "./Forgotpagetop.css"
-import {Context} from "../../../App"
-import { useContext } from 'react';
 import {Callapi,Valueupdate} from "../../../Util/Getdata/getdata"
+import { observer } from 'mobx-react'
+import {store} from "../../../Mobx"
 const Forgotpagetop = () => {
-  const [setLogin]=useContext(Context)
+  
   const [logindata,setLogindata]=useState({
     email:"",
     password:""
@@ -17,7 +17,7 @@ const Forgotpagetop = () => {
   }
   const callapi=()=>{
     navigate('../')
-Callapi(logindata,setLogin)
+Callapi(logindata,store)
   }  
   return (
     <div className='forgotpagetop'>
@@ -35,4 +35,4 @@ Callapi(logindata,setLogin)
   )
 }
 
-export default Forgotpagetop
+export default observer(Forgotpagetop)

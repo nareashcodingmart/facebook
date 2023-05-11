@@ -6,6 +6,9 @@ import Loginpagesrouter from './pages/Loginpages/Loginpagesrouter'
 import { createContext } from 'react';
 export const Context=createContext();
 const App = () => {  
+  if(localStorage.getItem("token")===null){
+    store.Login=0;
+  }
   return (
 
     <>

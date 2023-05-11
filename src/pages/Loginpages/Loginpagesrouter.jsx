@@ -6,7 +6,7 @@ const Loginpagesrouter = () => {
   return (
    <Routes>
     <Route path="/" element={<Loginpages/>}/>
-    <Route path="/forgotpage" element={<Forgotpages/>}/>
+    <Route path="forgotpage" element={<Forgotpages/>}/>
    </Routes>
   )
 }

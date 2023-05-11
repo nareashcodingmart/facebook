@@ -1,6 +1,6 @@
 export const Logout=(store)=>{
     localStorage.removeItem("token");
-    
+    window.location.pathname="/."
     store.Login=0;
 }
 export const Dropdown=(state,setState,n)=>{

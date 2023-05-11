@@ -22,7 +22,7 @@ Callapi(logindata,store)
     <Inbutbox placeholder="Password" className="login-id" type="password"onchange={valueupdate} name="password" value={logindata.password}/>
     <Inbutbox className="login-button" type="button" value="Log in" onclick={callapi}/>
     <div className='forgot-container'>
-      <Link to="forgotpage" className="underlinehover"> Forgotten password?</Link>
+      <Link to="/forgotpage" className="underlinehover"> Forgotten password?</Link>
     </div>
     <div className='login-line'></div>
      <div  className='create-button'>
