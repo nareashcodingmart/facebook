@@ -4,7 +4,8 @@ import React,{useState} from 'react';
 import "./Loginform.css";
 import { Link} from 'react-router-dom';
 import Inbutbox from "../Inputbox/Inbutbox"
-import {Callapi,Valueupdate} from "../../Util/Getdata/getdata"
+import {Callapi} from "../../Util/Getdata/getdata"
+import { Valueupdate } from '../../Util/Function/Function';
 const Loginform = (props) => {
   const [logindata,setLogindata]=useState({
     email:"",

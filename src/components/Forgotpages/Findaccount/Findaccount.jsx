@@ -2,14 +2,25 @@ import React from 'react'
 import "./Findaccount.css"
 import Inbutbox from '../../Inputbox/Inbutbox'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Findaccountvaluechecker,Valueupdate} from '../../../Util/Function/Function'
 const Findaccount = () => {
   const [data, setData] = useState({
     findaccount: ""
   });
-  const valueupdate = (e) => {
-    let obj = { ...data };
-    obj[e.target.name] = e.target.value;
-    setData(obj);
+  const navigate=useNavigate();
+  const [inputwarning, setInputwarning] = useState({
+    view: 0,
+    title: "",
+    message: "",
+    status:0
+  });
+  if(inputwarning.status===1){
+    navigate("/otp");
+  }
+  
+  const valueupdate=(e)=>{
+    Valueupdate(e,data,setData)
   }
   return (
     <div className='findaccount'>
@@ -17,14 +28,25 @@ const Findaccount = () => {
         Find Your Account
       </div>
       <div className='findaccountbody'>
+        {
+          inputwarning.view ? (
+            <div className='inputwarning'>
+              <div className='inputwarningheading'>
+                {inputwarning.title}
+              </div>
+              <div className='inputwarningbody'>
+                {
+                  inputwarning.message
+                }          </div>
+            </div>) : ""}
         <div className='findaccountcontent1'>
           Please enter your email address or mobile number to search
           for your account.
         </div>
         <Inbutbox placeholder="Email address or mobile number" className="findaccountcontent2" type="text" name="findaccount" value={data.findaccount} onchange={valueupdate} />
         <div className='findaccountcontent3'>
-          <button className='cancelbutton'>Cancel</button>
-          <button className='searchbutton'>Search</button>
+          <button className='cancelbutton clusor'>Cancel</button>
+          <button className='searchbutton clusor' onClick={() => Findaccountvaluechecker(data,setData,inputwarning,setInputwarning)}>Search</button>
         </div>
       </div>
     </div>

@@ -15,7 +15,7 @@ export const Contactlist=async(store)=>{
 export const Storylist=async(setStory)=>{
   let res=await Apicall("get","","story");
   if(res.status===200){
-    console.log(res.data.result)
+    // console.log(res.data.result)
     setStory(res.data.result)
   }
 }
@@ -26,8 +26,13 @@ export  const Callapi=async(logindata,store)=>{
     store.Login=1;
      }
     }
-export  const Valueupdate=(e,data,setData)=>{
-  let obj={...data};
-  obj[e.target.name]=e.target.value;
-  setData(obj);
+
+export const Findaccountcall=async(data)=>{
+  let res=await Apicall("post",data,"login/forgetPassword")
+  return(res.data)
+  
+}
+export const Otpverifier=async(data)=>{
+  let res=await Apicall("patch",data,"login/forgetPassword")
+  return(res.data)
 }
