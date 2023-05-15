@@ -4,7 +4,7 @@ import "./Homecontent.css"
 import Homecontact from '../../components/Homecontact/Homecontact'
 import {useEffect } from 'react'
 import { Contactlist} from '../../Util/Getdata/getdata'
-import Postcontainer from '../../components/Postcontainer/Postcontainer'
+import Postcontainer from '../../components/Postcontainer/PostContainer/Postcontainer'
 import { observer } from 'mobx-react'
 import {store} from "../../Mobx"
 const Homecontent = () => {

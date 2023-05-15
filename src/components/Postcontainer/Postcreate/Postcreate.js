@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Postcreate.css"
-import Postdialog from "./Postdialog/Postdialog"
+import Postdialog from "../Postdialog/Postdialog"
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { observer } from 'mobx-react'
