@@ -2,7 +2,6 @@ import {Reellist} from "../../Assert/List/List"
 import {Link} from "react-router-dom"
 export const Storysetlist = (list) => {
     let arr = [];
-    console.log(list.length);
     for (let i = 0; i <list.length; i++) {
         arr.push(<Link to="" className="storysetview" key={list[i].story_id}>
             <img className="storyviewbackgroungimg"src={list[i].story} alt="" />

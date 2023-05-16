@@ -8,7 +8,6 @@ import {store} from "../../Mobx"
 const Homeleftnav = () => {
   Homeleftnavlist[0].img=store.Profile.profile;
   Homeleftnavlist[0].name=`${store.Profile.first_name} ${store.Profile.last_name}`;
-  console.log(Homeleftnavlist)
   const [leftnav, setLeftnav] = useState(0);
   return (
     <div className='homeleftnav'>

@@ -23,6 +23,7 @@ export  const Callapi=async(logindata,store)=>{
   let res=await Apicall("post",logindata,"login")
      if(res.status===201){
     localStorage.setItem("token",res.data.message)
+    window.location.pathname="/."
     store.Login=1;
      }
     }
@@ -35,4 +36,8 @@ export const Findaccountcall=async(data)=>{
 export const Otpverifier=async(data)=>{
   let res=await Apicall("patch",data,"login/forgetPassword")
   return(res.data)
+}
+export const Newpasswordsubmitapi=async(data,store)=>{
+  let res=await Apicall("patch",data,"changePassword")
+     return (res.data)
 }

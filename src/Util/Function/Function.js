@@ -1,4 +1,4 @@
-import { Findaccountcall,Otpverifier} from "../../Util/Getdata/getdata"
+import { Findaccountcall, Newpasswordsubmitapi, Otpverifier, Callapi } from "../../Util/Getdata/getdata"
 import { store } from "../../Mobx"
 export const Findaccountvaluechecker = async (data, setData, state, setState) => {
     let obj = { ...state }
@@ -25,45 +25,103 @@ export const Findaccountvaluechecker = async (data, setData, state, setState) =>
     return
 }
 
-export const Valueupdate =(e, data, setData) => {
+export const Valueupdate = (e, data, setData) => {
     let obj = { ...data };
     obj[e.target.name] = e.target.value;
     setData(obj);
 }
-export const Otpverfication=async(otp,setOtp,otpwarning,setOtpwarning)=>{
-    let obj={...setOtpwarning}
-    let obj2={...otp};
-    obj.view=1;
-    if(otp.otpcode.length===0){
-        obj.message="Please enter a code."
+export const Otpverfication = async (otp, setOtp, otpwarning, setOtpwarning) => {
+    let obj = { ...setOtpwarning }
+    let obj2 = { ...otp };
+    obj.view = 1;
+    if (otp.otpcode.length === 0) {
+        obj.message = "Please enter a code."
     }
-    else if(!(Number.isInteger(Number(otp.otpcode)))){
-        obj.message="It looks like you entered some letters. Your code is 6 numbers long."
+    else if (!(Number.isInteger(Number(otp.otpcode)))) {
+        obj.message = "It looks like you entered some letters. Your code is 6 numbers long."
     }
-    else if(otp.otpcode.length===1){
-        obj.message="You only entered one number. Please check your code and try again."
+    else if (otp.otpcode.length === 1) {
+        obj.message = "You only entered one number. Please check your code and try again."
     }
-    else if(otp.otpcode.length<6){
-        obj.message=`You've only entered ${otp.otpcode.length} numbers. Please check your code and try again.`
+    else if (otp.otpcode.length < 6) {
+        obj.message = `You've only entered ${otp.otpcode.length} numbers. Please check your code and try again.`
     }
-    else if(otp.otpcode.length>6){
-        obj.message="You've entered more than six numbers. Please check your code and try again."
+    else if (otp.otpcode.length > 6) {
+        obj.message = "You've entered more than six numbers. Please check your code and try again."
     }
-    else{
-       
-        let res=await Otpverifier(otp)
-        if(res.message==="NO"){
-            obj.message="The number that you've entered doesn't match your code. Please try again."
+    else {
+
+        let res = await Otpverifier(otp)
+        if (res.message === "NO") {
+            obj.message = "The number that you've entered doesn't match your code. Please try again."
         }
-        else{
-            obj.view=0;
-            obj.status=1;
+        else {
+            obj.view = 0;
+            obj.status = 1;
         }
     }
-    obj2.otpcode="";
+    obj2.otpcode = "";
     setOtp(obj2)
-setOtpwarning(obj)
+    setOtpwarning(obj)
 }
-export const Regex=()=>{
-    
+export const Regex = (data, setStrength) => {
+
+
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (passwordRegex.test(data)) {
+        setStrength(4)
+    }
+    else if (data.length >= 7) {
+        setStrength(3)
+    }
+    else if (data.length >=5) {
+        setStrength(2)
+    }
+    else if (data.length >= 0) {
+        setStrength(1)
+    }
+    else {
+        setStrength(0)
+
+    }
+
+
+
+}
+export const Newpasswordsubmit = async (passwordwarning, setPasswordwarning, data, setData, strength, setStrength, store) => {
+    let obj = { ...passwordwarning }
+    let obj1 = { ...data }
+    obj.view = 1;
+    if (strength <= 1) {
+        obj1.password = ""
+        obj.message = "Password must be at least 6 characters in length."
+    }
+    else if (strength === 2) {
+        obj1.password = ""
+        obj.message = "Please choose a more secure password."
+    }
+    else {
+        obj.view = 0;
+        let res = await Newpasswordsubmitapi(data, store)
+        if (res.message === "Changed") {
+            Callapi(data, store);
+        }
+
+    }
+
+    setPasswordwarning(obj)
+    setData(obj1)
+    setStrength(0)
+}
+export const Postcreatedata = (data, setData, divref, setValuelength) => {
+    let obj = { ...data }
+    obj.value = divref.current.textContent
+    if (obj.value.length > 84) {
+        setValuelength(1)
+    }
+    else {
+        setValuelength(0)
+    }
+    setData(obj)
+
 }

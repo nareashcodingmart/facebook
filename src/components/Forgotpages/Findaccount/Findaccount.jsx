@@ -4,6 +4,8 @@ import Inbutbox from '../../Inputbox/Inbutbox'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Findaccountvaluechecker,Valueupdate} from '../../../Util/Function/Function'
+import {store} from "../../../Mobx"
+import { observer } from 'mobx-react'
 const Findaccount = () => {
   const [data, setData] = useState({
     findaccount: ""
@@ -21,6 +23,7 @@ const Findaccount = () => {
   
   const valueupdate=(e)=>{
     Valueupdate(e,data,setData)
+    store.Findaccount=e.target.value
   }
   return (
     <div className='findaccount'>
@@ -53,4 +56,4 @@ const Findaccount = () => {
   )
 }
 
-export default Findaccount
+export default observer(Findaccount)

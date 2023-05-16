@@ -17,7 +17,6 @@ const Postcontainer = () => {
   useEffect(() => {
     Storylist(setStory)
   }, [])
-  console.log(postarr.arr)
   return (
 
     <InfiniteScroll

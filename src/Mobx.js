@@ -4,6 +4,7 @@ const mobxstore={
 Login:1,
 Profile:0,
 Contactlist:"",
-Findaccount:""
+Findaccount:"",
+createstorydialog:false,
 }
 export const store=observable(mobxstore)

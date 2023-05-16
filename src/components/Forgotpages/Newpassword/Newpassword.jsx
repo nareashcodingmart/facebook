@@ -2,22 +2,23 @@ import React, { useState } from 'react'
 import "./Newpassword.css"
 import Inbutbox from '../../Inputbox/Inbutbox'
 import { store } from "../../../Mobx"
-import { Valueupdate, Regex } from '../../../Util/Function/Function'
+import { Valueupdate, Regex, Newpasswordsubmit } from '../../../Util/Function/Function'
 const Newpassword = () => {
     const [data, setData] = useState({
         password: "",
-        mail: store.Findaccount
+        email: store.Findaccount
     })
     const [passwordwarning,setPasswordwarning]=useState({
-        view:1,
+        view:0,
         message:"You cannot use a blank password."
     })
-    const [strength, setStrength] = useState(4);
+    const [strength, setStrength] = useState(0);
     const [passshow, setPassshow] = useState(false)
     const [open, setOpen] = useState(false)
+
     const valueupdate = (e) => {
         Valueupdate(e, data, setData)
-        Regex(data.password)
+        Regex(data.password,setStrength)
     }
     return (
         <div className='findaccount'>
@@ -63,7 +64,7 @@ const Newpassword = () => {
                 </div>
                 <div className='findaccountcontent3'>
                     <button className='skipbutton clusor'>Skip</button>
-                    <button className='searchbutton clusor'>Continue</button>
+                    <button className='searchbutton clusor' onClick={()=>Newpasswordsubmit(passwordwarning,setPasswordwarning,data,setData,strength,setStrength,store)}>Continue</button>
                 </div>
             </div>
 

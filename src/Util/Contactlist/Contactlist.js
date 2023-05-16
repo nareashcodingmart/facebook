@@ -1,6 +1,6 @@
 export const HomeContactlist = (list) => {
     let arr = [];
-    console.log(list)
+   
     for (let i = 0; i < list.length; i++) {
         arr.push(
             <div className="contactlist" key={list[i].id}>

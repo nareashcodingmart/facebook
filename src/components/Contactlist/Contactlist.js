@@ -1,15 +1,17 @@
 import React from 'react'
 import "./Contactlist.css"
 import { HomeContactlist } from '../../Util/Contactlist/Contactlist'
-const Contactlist =({list}) => {
+import {store}from "../../Mobx"
+import { observer} from 'mobx-react'
+const Contactlist =() => {
 
   return (
     <div>
       {
-        HomeContactlist(list)
+        HomeContactlist(store.Contactlist)
       }
     </div>
   )
 }
 
-export default Contactlist
+export default observer(Contactlist)
