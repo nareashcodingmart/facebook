@@ -5,17 +5,41 @@ import { observer } from 'mobx-react'
 import { store } from "../../../Mobx"
 import { Postcreatedata } from '../../../Util/Function/Function'
 import { useRef } from 'react'
+import html2canvas from 'html2canvas'
 const Postdialog = (props) => {
+  const [theme,setTheme]=useState(0);
   const [data, setData] = useState({
     value: "",
   })
   const [valuelength, setValuelength] = useState(0)
   const divref = useRef(null)
+  const img=document.getElementById("postcreatedialogwriterarea")
+
+  const fun=async()=>{
+   let canvas=await html2canvas(img, {
+    useCORS: true,
+  })
+   let data=canvas.toDataURL("image/png", 1.0);
+  downloadImage(data);
+}
+const downloadImage = (blob) => {
+const fakeLink = window.document.createElement("a");
+fakeLink.style = "display:none;";
+fakeLink.download ="image.png";
+
+fakeLink.href = blob;
+
+document.body.appendChild(fakeLink);
+fakeLink.click();
+document.body.removeChild(fakeLink);
+
+fakeLink.remove();
+}
   return (
     <Dialog open={store.createstorydialog}>
       <div className='postcreatedialog'>
         <div>
-          <div className='postcreatedialogtitle'>
+          <div className='postcreatedialogtitle postcreatedialogtitlefont'>
             Create post
           </div>
           <div className='postcreatedialogclose'>
@@ -34,8 +58,8 @@ const Postdialog = (props) => {
           </div>
         </div>
         <div className='postcreatedialogwriter'>
-          <div className='postcreatedialogwriterarea'
-          id={valuelength?"lengthabove":"lengthbelow"}
+          <div id='postcreatedialogwriterarea'
+          className={valuelength===2?"lengthabove":"lengthbelow"}
             onInput={() => Postcreatedata(data, setData, divref,setValuelength)}
             suppressContentEditableWarning
             contentEditable
@@ -46,14 +70,23 @@ const Postdialog = (props) => {
               !data.value ?
                 (<p>
                   What's on your mind, {store.Profile.first_name}?
-                </p>) : ""
+                </p>) :""
             }
           </div>
 
           <div className='postcreatetheme'>
-            <img className="clusor" src="https://www.facebook.com/images/composer/SATP_Aa_square-2x.png" alt="" />
+            {theme?
+            (<div>
+             <div className="themeoff"> <i/></div>
+
+            </div>)
+            :(<img  onClick={()=>{setTheme(1)}}className="clusor" src="https://www.facebook.com/images/composer/SATP_Aa_square-2x.png" alt="" />)
+            
+          }
             <i className='clusor' />
           </div>
+          </div>
+          <div className='postcreatecontentbelow'>
           <div className='postcreateaddpost'>
             <div className='postcreateaddpostleft'>
               Add to your post
@@ -67,7 +100,9 @@ const Postdialog = (props) => {
               <div><i /></div>
             </div>
           </div>
-          <div className='postcreatepostsubmit'> Post</div>
+          <div className='postcreatepostsubmit' 
+          id={valuelength!==0?"postcreatepostsubmitwork":"postcreatepostsubmitnotwork"}
+          onClick={()=>valuelength!==0?fun():""}> Post</div>
         </div>
       </div>
     </Dialog>

@@ -4,7 +4,15 @@ import {Homeleftnavfooter } from "../../Assert/Homeleftnav/Homeleftnav"
 export const Leftnavlist = (i,n,list) => {
     let arr = [];
     for (; i < n; i++) {
-            arr.push(<Link to={list[i].link} key={i}><div><img src={list[i].img} alt=""/> <span>{list[i].name}</span></div></Link>);
+            arr.push(<Link to={list[i].link} key={i}>
+                <div>
+                    {
+                list[i].itag?(<i className={`leftnavicon${list[i].name}`}/>):
+                <img src={list[i].img} alt=""/> 
+                    }
+                <span>{list[i].name}</span>
+                </div>
+                </Link>);
     }
     return arr;
 }

@@ -48,7 +48,7 @@ const Otp = () => {
                 <div className='otpcontent3'>
                     <div className='otpcontent3left clusor underlinehover'>Didn't get a code?</div>
                     <div>
-                        <button className="cancelbutton clusor">Cancel</button>
+                        <button className="cancelbutton clusor" onClick={()=>window.location.pathname="/forgotpage"}>Cancel</button>
                         <button className="searchbutton clusor" onClick={()=>Otpverfication(otp,setOtp,otpwarning,setOtpwarning)}>Continue</button>
                     </div>
                 </div>

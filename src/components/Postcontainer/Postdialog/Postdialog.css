@@ -10,6 +10,8 @@
     position: absolute;
     height: 59px;
     font-family: var(--font);
+}
+.postcreatedialogtitlefont{
     font-size: 20px;
     font-weight: 700;
 }
@@ -22,7 +24,7 @@
     height: 20px;
     background-repeat: no-repeat;
     display: inline-block;
-    -webkit-filter: invert(39%) sepia(21%) saturate(200%) saturate(109.5%) hue-rotate(174deg) brightness(94%) contrast(86%);
+    filter: invert(39%) sepia(21%) saturate(200%) saturate(109.5%) hue-rotate(174deg) brightness(94%) contrast(86%);
 }
 
 .postcreatedialogclose {
@@ -112,7 +114,7 @@
     padding: 4px 0 8px;
 }
 
-.postcreatedialogwriterarea {
+#postcreatedialogwriterarea {
     padding: 0 16px 39px;
     min-height: 70px;
     outline: none;
@@ -120,15 +122,15 @@
     color: #050505;
 }
 
-#lengthbelow {
+.lengthbelow {
     font-size: 24px;
 }
 
-#lengthabove {
+.lengthabove {
     font-size: 15px;
 }
 
-.postcreatedialogwriterarea p {
+#postcreatedialogwriterarea p {
     font-family: var(--font);
     color: #65676B;
     font-size: 1.5rem;
@@ -206,13 +208,25 @@
 
 .postcreatepostsubmit {
     margin: 16px 16px;
-    background-color: #CED0D4;
-    opacity: 0.5;
-    cursor: not-allowed;
     height: 36px;
     border-radius: 8px;
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 600;
+    font-family:var(--font);
+    font-size: 15px;
+    
+}
+#postcreatepostsubmitwork{
+    color: #fff;
+    background-color: var(--bluecolor);
+    cursor:pointer
+}
+#postcreatepostsubmitnotwork{
+    background-color: #CED0D4;
+    color: #989a9b;
+    opacity: 0.5;
+    cursor: not-allowed;
 }

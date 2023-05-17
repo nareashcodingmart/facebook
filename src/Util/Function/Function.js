@@ -18,6 +18,7 @@ export const Findaccountvaluechecker = async (data, setData, state, setState) =>
         }
         else {
             store.Findaccount = res.mail
+            console.log(store.Findaccount)
             obj.status = 1
         }
     }
@@ -117,11 +118,15 @@ export const Postcreatedata = (data, setData, divref, setValuelength) => {
     let obj = { ...data }
     obj.value = divref.current.textContent
     if (obj.value.length > 84) {
+        setValuelength(2)
+    }
+    else if(obj.value.length>0){
         setValuelength(1)
     }
-    else {
+    else{
         setValuelength(0)
     }
+    // alert(obj.value.length)
     setData(obj)
 
 }

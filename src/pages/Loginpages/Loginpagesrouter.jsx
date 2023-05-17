@@ -10,6 +10,7 @@ const Loginpagesrouter = () => {
     <Route path="otp" element={<Forgotpages top={0} otp={1}/>}/>
     <Route path="otpverifier" element={<Forgotpages top={0} otp={2}/>}/>
    </Routes>
+
   )
 }
 

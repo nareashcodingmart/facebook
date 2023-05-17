@@ -48,7 +48,7 @@ const Findaccount = () => {
         </div>
         <Inbutbox placeholder="Email address or mobile number" className="findaccountcontent2" type="text" name="findaccount" value={data.findaccount} onchange={valueupdate} />
         <div className='findaccountcontent3'>
-          <button className='cancelbutton clusor'>Cancel</button>
+          <button className='cancelbutton clusor' onClick={()=>window.location.pathname="./"}>Cancel</button>
           <button className='searchbutton clusor' onClick={() => Findaccountvaluechecker(data,setData,inputwarning,setInputwarning)}>Search</button>
         </div>
       </div>

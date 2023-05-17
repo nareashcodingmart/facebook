@@ -50,7 +50,59 @@
     height: 28px;
     margin-right: 10px;
 }
-
+.homeleftnavlist a div i{
+    width: 36px;
+    height: 36px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-right:6px;
+    margin-left: -4px;
+    transform: scale(.77777777);
+}
+.leftnaviconFriends{
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/ym/r/ELk7Nvr1G3K.png);
+    background-position: 0px -296px;
+}
+.leftnaviconGroups{
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/ym/r/ELk7Nvr1G3K.png);
+    background-position: 0px -74px;
+}
+.leftnaviconMarketplace{
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/ym/r/ELk7Nvr1G3K.png);
+    background-position: 0px -407px;
+}
+.leftnaviconMessenger{
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yb/r/1nD3zChfcfk.png);
+    background-position: 0px -37px
+}
+.leftnaviconMemories{
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/ym/r/ELk7Nvr1G3K.png);
+    background-position: 0px -444px;
+}
+.leftnaviconSaved{
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/ym/r/ELk7Nvr1G3K.png);
+    background-position: 0px -185px;
+}
+.leftnaviconWatch{
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/ym/r/ELk7Nvr1G3K.png);
+    background-position: 0px -518px;
+}
+.leftnaviconPages{
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/ym/r/ELk7Nvr1G3K.png);
+    background-position: 0px -111px;
+}
+.leftnaviconBlood{
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/y7/r/z3JoyCWlf8g.png);
+    background-position: -722px -175px;
+}
+.leftnaviconFundraisers{
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/ym/r/ELk7Nvr1G3K.png);
+    background-position: 0px -333px;
+}
+.leftnaviconGaming{
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/ym/r/ELk7Nvr1G3K.png);
+    background-position: 0px -37px;
+}
 .leftnav-seemore {
     display: flex;
     padding-left: 8px;

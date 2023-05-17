@@ -3,6 +3,8 @@ import "./Newpassword.css"
 import Inbutbox from '../../Inputbox/Inbutbox'
 import { store } from "../../../Mobx"
 import { Valueupdate, Regex, Newpasswordsubmit } from '../../../Util/Function/Function'
+import { Dialog } from '@material-ui/core'
+import Ruledialog from '../Ruledialog/Ruledialog'
 const Newpassword = () => {
     const [data, setData] = useState({
         password: "",
@@ -63,10 +65,13 @@ const Newpassword = () => {
                     </div>
                 </div>
                 <div className='findaccountcontent3'>
-                    <button className='skipbutton clusor'>Skip</button>
+                    <button className='skipbutton clusor' onClick={()=>window.location.pathname="./"}>Skip</button>
                     <button className='searchbutton clusor' onClick={()=>Newpasswordsubmit(passwordwarning,setPasswordwarning,data,setData,strength,setStrength,store)}>Continue</button>
                 </div>
             </div>
+            <Dialog open={open}>
+                <Ruledialog setOpen={setOpen}/>
+            </Dialog>
 
         </div>
     )
