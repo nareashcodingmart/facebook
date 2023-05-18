@@ -6,6 +6,8 @@ Profile:0,
 Contactlist:"",
 Findaccount:"",
 createpostdialog:false,
-createstorymessageicon:1
+createstorymessageicon:1,
+createstoryrouter:2,
+textstorycontent:"",
 }
 export const store=observable(mobxstore)

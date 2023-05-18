@@ -3,7 +3,8 @@ import "./Create.css"
 import { store } from "../../../../Mobx"
 import { observer } from 'mobx-react'
 import { useEffect } from 'react'
-import { Photocreatestoryfun } from '../../../../Util/Function/Function'
+import Home from "./Home/Home"
+import {Textstorybody,Textstorynavi} from './Textstory/Textstory'
 const Create = () => {
   useEffect(() => {
     store.createstorymessageicon = 0;
@@ -26,33 +27,29 @@ const Create = () => {
             </div>
 
           </div>
+          <div>
           <div className='storycreatenaviprofile displayflexalign'>
             <img src={store.Profile.profile} alt="" />
             <div>{store.Profile.first_name} {store.Profile.last_name}</div>
           </div>
-        </div>
-      </div>
-      <div className='storycreatepagebody displayflexcenter'>
-  
-        <div onClick={Photocreatestoryfun} className='photostorycreatepagebody storycreatepagebodycontent clusor displayflexcenter'>
-          <div className='storycreatepagebodycontent1 displayflexcenter'>
-            <div className='createstoryphotoicon displayflexcenter'>
-              <i />
-            </div>
-            <h5>Create a photo story</h5>
+              {
+                store.createstoryrouter===2 &&<Textstorynavi/>
+              }
           </div>
         </div>
+      </div>
 
-        <div className='textstorycreatepagebody storycreatepagebodycontent clusor displayflexcenter'>
-          <div className='storycreatepagebodycontent1 displayflexcenter'>
-            <div className='createstorytexticon displayflexcenter'>
-              <i />
-            </div>
-            <h5>Create a text story</h5>
-          </div>
-        </div>
-      </div>
+      {
+        store.createstoryrouter === 0 && <Home />
+      }
+      {
+        store.createstoryrouter === 1 && <div> k</div>
+      }
+      {
+        store.createstoryrouter === 2 && <Textstorybody />
+      }
     </div>
+
   )
 }
 
