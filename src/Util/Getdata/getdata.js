@@ -41,3 +41,7 @@ export const Newpasswordsubmitapi=async(data,store)=>{
   let res=await Apicall("patch",data,"changePassword")
      return (res.data)
 }
+export const Creatstory=async(form)=>{
+  let res=await Apicall("postheader",form,"home/story")
+  return (res.data)
+}

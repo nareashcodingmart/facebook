@@ -1,4 +1,4 @@
-import { Findaccountcall, Newpasswordsubmitapi, Otpverifier, Callapi } from "../../Util/Getdata/getdata"
+import { Findaccountcall, Newpasswordsubmitapi, Otpverifier,Creatstory,Callapi } from "../../Util/Getdata/getdata"
 import { store } from "../../Mobx"
 export const Findaccountvaluechecker = async (data, setData, state, setState) => {
     let obj = { ...state }
@@ -129,4 +129,19 @@ export const Postcreatedata = (data, setData, divref, setValuelength) => {
     // alert(obj.value.length)
     setData(obj)
 
+}
+
+export const Photocreatestoryfun=async()=>{
+    var input = document.createElement('input');
+    const formData=new FormData();
+input.type = 'file';
+input.accept="image/png, image/gif, image/jpeg"
+input.onchange = async(e) => { 
+   var file = e.target.files[0];
+   formData.append("story",file)
+   let res=await Creatstory(file)
+   console.log(res)
+}
+
+input.click();
 }

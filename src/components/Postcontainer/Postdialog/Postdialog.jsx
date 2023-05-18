@@ -6,7 +6,7 @@ import { store } from "../../../Mobx"
 import { Postcreatedata } from '../../../Util/Function/Function'
 import { useRef } from 'react'
 import html2canvas from 'html2canvas'
-const Postdialog = (props) => {
+const Postdialog = () => {
   const [theme,setTheme]=useState(0);
   const [data, setData] = useState({
     value: "",
@@ -36,14 +36,14 @@ document.body.removeChild(fakeLink);
 fakeLink.remove();
 }
   return (
-    <Dialog open={store.createstorydialog}>
+    <Dialog open={store.createpostdialog}>
       <div className='postcreatedialog'>
         <div>
           <div className='postcreatedialogtitle postcreatedialogtitlefont'>
             Create post
           </div>
           <div className='postcreatedialogclose'>
-            <span onClick={() => store.createstorydialog = 0}><i /></span>
+            <span onClick={() => store.createpostdialog = 0}><i /></span>
           </div>
         </div>
         <div className='postcreatedialogbody1'>

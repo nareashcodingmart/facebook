@@ -1,5 +1,4 @@
 .body{
-    height:fit-content;
-    min-height: 110vh;
+    min-height:calc(100vmin - 55px);
     background-color:#F1F2F4;
 }

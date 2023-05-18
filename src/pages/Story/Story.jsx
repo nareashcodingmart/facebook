@@ -6,7 +6,6 @@ const Story = () => {
   const { id } = useParams();
   return (
     <div>
-      story
       {
         id==="create" && <Create/>
       }

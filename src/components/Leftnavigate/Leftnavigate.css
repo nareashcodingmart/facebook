@@ -3,6 +3,7 @@
     width: 360px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
     position:fixed;
+    height: calc(100vmin - 56px);
 }
 .leftnavigatecontent{
     height: calc(100vmin - 160px);
