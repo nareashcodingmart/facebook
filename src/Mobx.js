@@ -9,5 +9,7 @@ createpostdialog:false,
 createstorymessageicon:1,
 createstoryrouter:2,
 textstorycontent:"",
+textstorystyle:0,
+textstorybackground:1,
 }
 export const store=observable(mobxstore)

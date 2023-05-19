@@ -40,3 +40,27 @@
     width: 60px;
     border-radius: 50px;
 }
+.storycreatenaviscroll{
+    overflow-y:hidden;
+    height: calc(100% - 132px);
+    height: 100%;
+    /* background-color: aqua; */
+}
+.storycreatenaviscroll:hover{
+overflow-y: auto;
+margin-right: -16px;
+}
+.storycreatenaviscroll::-webkit-scrollbar {
+    width: 16px;
+}
+
+.storycreatenaviscroll::-webkit-scrollbar-track {
+    background: transparent
+}
+
+.storycreatenaviscroll::-webkit-scrollbar-thumb {
+    background:transparent;
+    border-radius: 100px;
+    border-left: 3px solid transparent;
+    border-right: 5px solid transparent;
+}

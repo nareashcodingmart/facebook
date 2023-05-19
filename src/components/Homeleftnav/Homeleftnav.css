@@ -1,6 +1,6 @@
 .homeleftnav {
     width: 303.5px;
-    max-height: calc(100vmin - 56px);
+    max-height: calc(100% - 56px);
     overflow-y: hidden;
     position: fixed;
 }

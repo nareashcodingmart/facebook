@@ -27,7 +27,7 @@ const Create = () => {
             </div>
 
           </div>
-          <div>
+          <div className='storycreatenaviscroll'>
           <div className='storycreatenaviprofile displayflexalign'>
             <img src={store.Profile.profile} alt="" />
             <div>{store.Profile.first_name} {store.Profile.last_name}</div>
