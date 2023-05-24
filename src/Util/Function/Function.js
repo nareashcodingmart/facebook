@@ -1,5 +1,6 @@
 import { Findaccountcall, Newpasswordsubmitapi, Otpverifier,Creatstory,Callapi } from "../../Util/Getdata/getdata"
 import { store } from "../../Mobx"
+import html2canvas from 'html2canvas'
 export const Findaccountvaluechecker = async (data, setData, state, setState) => {
     let obj = { ...state }
     if (data.findaccount.length === 0) {
@@ -145,3 +146,28 @@ input.onchange = async(e) => {
 
 input.click();
 }
+export const Textstory=()=>{
+    let img=document.getElementById("textstoryimg")
+    console.log(img)
+    fun(img)
+}
+const fun=async(img)=>{
+    let canvas=await html2canvas(img, {
+     useCORS: true,
+   })
+    let data=canvas.toDataURL("image/png", 1.0);
+   downloadImage(data);
+ }
+ const downloadImage = (blob) => {
+ const fakeLink = window.document.createElement("a");
+ fakeLink.style = "display:none;";
+ fakeLink.download ="image.png";
+ 
+ fakeLink.href = blob;
+ 
+ document.body.appendChild(fakeLink);
+ fakeLink.click();
+ document.body.removeChild(fakeLink);
+ 
+ fakeLink.remove();
+ }

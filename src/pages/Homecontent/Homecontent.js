@@ -17,7 +17,7 @@ const Homecontent = () => {
       <div className='homeleftnav-outer'>
         <Homeleftnav/> 
       </div>
-      <div>
+      <div className='homepostcontainerouter'>
         <Postcontainer/>
       </div>
       <div className='homecontactlist'>

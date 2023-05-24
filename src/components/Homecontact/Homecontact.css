@@ -1,11 +1,13 @@
 .homecontact {
     padding:8px 0;
     width: 303.5px;
+    /* max-width:360px; */
+    min-width:280px;
     max-height: calc(100vmin - 72px);
     overflow-y:hidden;
     overflow-x: hidden;
     position: fixed;
-    right: 0;
+    /* right: 0; */
 }
 .homecontact:hover{
     overflow-y: auto;

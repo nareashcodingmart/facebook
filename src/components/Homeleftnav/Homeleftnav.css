@@ -1,8 +1,10 @@
 .homeleftnav {
     width: 303.5px;
+    min-width:280px;
     max-height: calc(100% - 56px);
     overflow-y: hidden;
     position: fixed;
+    left:0
 }
 
 .homeleftnav:hover {

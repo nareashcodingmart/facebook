@@ -42,9 +42,7 @@
 }
 .storycreatenaviscroll{
     overflow-y:hidden;
-    height: calc(100% - 132px);
-    height: 100%;
-    /* background-color: aqua; */
+    height: calc(100% - 126px);
 }
 .storycreatenaviscroll:hover{
 overflow-y: auto;
@@ -63,4 +61,9 @@ margin-right: -16px;
     border-radius: 100px;
     border-left: 3px solid transparent;
     border-right: 5px solid transparent;
+}
+@media only screen and (max-width: 900px) {
+    .storycreatepageleftnavi{
+        display: none;
+    }
 }

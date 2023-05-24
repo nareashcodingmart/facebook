@@ -43,7 +43,7 @@ fakeLink.remove();
             Create post
           </div>
           <div className='postcreatedialogclose'>
-            <span onClick={() => store.createpostdialog = 0}><i /></span>
+            <span Click={() => store.createpostdialog = 0}><i /></span>
           </div>
         </div>
         <div className='postcreatedialogbody1'>

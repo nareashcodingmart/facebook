@@ -42,9 +42,9 @@ const Create = () => {
       {
         store.createstoryrouter === 0 && <Home />
       }
-      {
+      {/* {
         store.createstoryrouter === 1 && <div> k</div>
-      }
+      } */}
       {
         store.createstoryrouter === 2 && <Textstorybody />
       }

@@ -7,7 +7,8 @@ import { Storylist} from '../../../Util/Getdata/getdata'
 import { Postarr } from '../../../Util/Home/Home'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import Postcomponent from '../../Postcomponent/Postcomponent'
-
+// import Pop from '../../opo/Pop'
+import MouseOverPopover from "../../opo/Pop"
 const Postcontainer = () => {
   const [postarr, setPostarr] = useState({
     arr: [],
@@ -28,6 +29,7 @@ const Postcontainer = () => {
       <div className='postcontainer'>
         <Storycontainer storylist={story} />
         <Postcreate/>
+        <div><MouseOverPopover/></div>
         {postarr.arr.map((i) => (
           <Postcomponent key={i} />
         ))

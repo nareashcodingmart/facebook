@@ -8,6 +8,7 @@ import Allfriends from "../../components/Friends/Pages/Allfriends/Allfriends"
 import Suggestion from "../../components/Friends/Pages/Suggestion/Suggestion"
 const Friends = () => {
   const { id } = useParams();
+  document.title="Friends | Facebook"
   return (
     <div>
       {

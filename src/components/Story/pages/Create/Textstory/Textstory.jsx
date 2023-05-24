@@ -4,9 +4,11 @@ import { useState } from 'react'
 import { Storybackgroundtheme1,Storybackgroundtheme2} from '../../../../../Assert/List/List'
 import { store } from "../../../../../Mobx"
 import { observer } from 'mobx-react'
+import { Textstory } from '../../../../../Util/Function/Function'
  export  const Textstorybody = observer(() => {
-  let arrfont=["storyregularfont","storynarrowfont","storylightfont","storystencilfont","storyheavyfont"]
+  let arrfont=["facebook sans app","acebook narrow","facebook script app light","acebook stencil","facebook sans app heavy italic"]
   return (
+    <div className='textstorybodyouter'>
     <div className='textstorybody'>
       <div><h3>
         Preview
@@ -14,8 +16,12 @@ import { observer } from 'mobx-react'
       </div>
       <div className='textstorybodycontent displayflexcenter'>
         <div className='textstorybodycontent2 displayflexcenter'
-        style={{backgroundImage:`${store.textstorybackground<17?Storybackgroundtheme1[store.textstorybackground -1].image:Storybackgroundtheme2[store.textstorybackground -1].image}`}}
-        id={arrfont[store.textstorystyle]}>
+        style={{
+          backgroundImage:`${store.textstorybackground>16?(Storybackgroundtheme2[store.textstorybackground -17].image):(Storybackgroundtheme1[store.textstorybackground -1].image)}`,
+          fontFamily:`${arrfont[store.textstorystyle]}`
+        }}
+        id="textstoryimg"
+        >
             <div className='dispalyflexcenter'>
                 {
                     !store.textstorycontent.length?<span className='textstorybodycontent2span'>Start typing</span>:store.textstorycontent
@@ -24,6 +30,7 @@ import { observer } from 'mobx-react'
         </div>
       </div>
     </div>
+    </div>
   )
 }
  )
@@ -31,7 +38,7 @@ import { observer } from 'mobx-react'
 export const Textstorynavi=observer(()=>{
     const [inputfiledfocus,setInputfiledfocus]=useState(0)
     const [inputfiledletter,setInputfiledletter]=useState(0)
-    const [backgroundtheme,setBackgroundtheme]=useState(0)
+    const [backgroundtheme,setBackgroundtheme]=useState(1)
 return(
     <div className='textstorynavi'>
         <div className={`textstorynaviinputcontainerselect ${inputfiledfocus?"textstorynaviinputcontainerselected":""}`}>
@@ -82,7 +89,10 @@ return(
        </div>
        </>}
        </div>
-       <div className='yyy'></div>
+       <div className='textstorypostcontainer displayflexcenter'>
+           <button className='storypostcancel displayflexcenter clusor ' onClick={()=>store.createstoryrouter=0}>Discard</button>
+           <button className='storypostok displayflexcenter clusor' onClick={()=>{Textstory()}}>Share to story</button> 
+       </div>
   </div >
     
 )

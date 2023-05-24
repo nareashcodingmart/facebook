@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className='storycreatepagebody displayflexcenter'>
   
-    <div onClick={()=>{store.createstoryrouter=1;Photocreatestoryfun()}} className='photostorycreatepagebody storycreatepagebodycontent clusor displayflexcenter'>
+    <div onClick={()=>{store.createstoryrouter=0;Photocreatestoryfun()}} className='photostorycreatepagebody storycreatepagebodycontent clusor displayflexcenter'>
       <div className='storycreatepagebodycontent1 displayflexcenter'>
         <div className='createstoryphotoicon displayflexcenter'>
           <i />
