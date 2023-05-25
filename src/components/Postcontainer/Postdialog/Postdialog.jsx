@@ -5,36 +5,36 @@ import { observer } from 'mobx-react'
 import { store } from "../../../Mobx"
 import { Postcreatedata } from '../../../Util/Function/Function'
 import { useRef } from 'react'
-import html2canvas from 'html2canvas'
+// import html2canvas from 'html2canvas'
 const Postdialog = () => {
-  const [theme,setTheme]=useState(0);
+  // const [theme,setTheme]=useState(0);
   const [data, setData] = useState({
     value: "",
   })
   const [valuelength, setValuelength] = useState(0)
   const divref = useRef(null)
-  const img=document.getElementById("postcreatedialogwriterarea")
+  // const img=document.getElementById("postcreatedialogwriterarea")
 
   const fun=async()=>{
-   let canvas=await html2canvas(img, {
-    useCORS: true,
-  })
-   let data=canvas.toDataURL("image/png", 1.0);
-  downloadImage(data);
+  //  let canvas=await html2canvas(img, {
+  //   useCORS: true,
+  // })
+  //  let data=canvas.toDataURL("image/png", 1.0);
+  // downloadImage(data);
 }
-const downloadImage = (blob) => {
-const fakeLink = window.document.createElement("a");
-fakeLink.style = "display:none;";
-fakeLink.download ="image.png";
+// const downloadImage = (blob) => {
+// const fakeLink = window.document.createElement("a");
+// fakeLink.style = "display:none;";
+// fakeLink.download ="image.png";
 
-fakeLink.href = blob;
+// fakeLink.href = blob;
 
-document.body.appendChild(fakeLink);
-fakeLink.click();
-document.body.removeChild(fakeLink);
+// document.body.appendChild(fakeLink);
+// fakeLink.click();
+// document.body.removeChild(fakeLink);
 
-fakeLink.remove();
-}
+// fakeLink.remove();
+// }
   return (
     <Dialog open={store.createpostdialog}>
       <div className='postcreatedialog'>
@@ -42,8 +42,8 @@ fakeLink.remove();
           <div className='postcreatedialogtitle postcreatedialogtitlefont'>
             Create post
           </div>
-          <div className='postcreatedialogclose'>
-            <span Click={() => store.createpostdialog = 0}><i /></span>
+          <div className='postcreatedialogclose clusor'>
+            <span onClick={() => store.createpostdialog = 0}><i /></span>
           </div>
         </div>
         <div className='postcreatedialogbody1'>
@@ -57,7 +57,7 @@ fakeLink.remove();
             </div>
           </div>
         </div>
-        <div className='postcreatedialogwriter'>
+         {/* <div className='postcreatedialogwriter'>
           <div id='postcreatedialogwriterarea'
           className={valuelength===2?"lengthabove":"lengthbelow"}
             onInput={() => Postcreatedata(data, setData, divref,setValuelength)}
@@ -85,6 +85,42 @@ fakeLink.remove();
           }
             <i className='clusor' />
           </div>
+          </div>  */}
+          <div className='postcreatedialogcontainer'>
+          <div className='displayflex postcreatecaptioncontainer'>
+            <div
+            className="postcreatecaption"
+            onInput={() => Postcreatedata(data, setData, divref,setValuelength)}
+            suppressContentEditableWarning
+            contentEditable
+            ref={divref}
+            role="textbox" 
+            spellCheck="true">
+                 {
+              !data.value ?
+                (<p>
+                  What's on your mind, {store.Profile.first_name}?
+                </p>) :""
+            }
+            </div>
+            <div className='postcreatecaptionemoji'><i className='clusor' /></div>
+          </div>
+          <div className='postcreatedialogimgcontainer'>
+            <div className='postcreatedialogimg clusor'>
+              <div className='postcreatedialogimgclose displayflex'><span className='displayflexcenter clusor'><i/></span></div>
+              <div className='postcreatedialogimgicon displayflexcenter '>
+                <span className='displayflexcenter'><i/></span>
+              </div>
+              <div className='displayflexcenter postcreatedialogimgcontent'>
+               <div> Add Photos/Videos</div>
+                <div className='postcreatedialogimgcontent2'>or drag and drop</div>
+              </div>
+            </div>
+            <div className='postcreatedialogimg2'>
+            hh
+          </div>
+          </div>
+         
           </div>
           <div className='postcreatecontentbelow'>
           <div className='postcreateaddpost'>

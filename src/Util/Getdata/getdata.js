@@ -7,15 +7,16 @@ export const Profile=async(store)=>{
       }
 }
 export const Contactlist=async(store)=>{
-    let res = await Apicall("get", "", "friends/suggestions");
+    let res = await Apicall("get", "", "friends/list");
       if (res.status === 201) {
-        store.Contactlist=res.data
+        console.log("hi")
+        console.log(res.data.result)
+        store.Contactlist=res.data.result
       }
 }
 export const Storylist=async(setStory)=>{
   let res=await Apicall("get","","story");
   if(res.status===200){
-    // console.log(res.data.result)
     setStory(res.data.result)
   }
 }
@@ -43,5 +44,25 @@ export const Newpasswordsubmitapi=async(data,store)=>{
 }
 export const Creatstory=async(form)=>{
   let res=await Apicall("postheader",form,"home/story")
+  window.location.pathname="/."
   return (res.data)
+}
+export const Creatstorytext=async(form)=>{
+  let res=await Apicall("postheadertext",form,"home/storyText")
+  window.location.pathname="/."
+  return (res.data)
+}
+export const Friendlistsuggestion=async()=>{
+  let res=await Apicall("get","","friends/suggestions")
+  // console.log(res.data)
+  return res.data
+}
+export const Removefriendlistsuggestion=async(data)=>{
+  // console.log(data)
+  let res=await Apicall("patchheader",data,"friends/suggestions")
+  console.log(res)
+}
+export const Addfriendlistsuggestion=async(data)=>{
+   let res=await Apicall("postheader",data,"friends/suggestions")
+   console.log(res)
 }

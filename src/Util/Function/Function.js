@@ -1,4 +1,4 @@
-import { Findaccountcall, Newpasswordsubmitapi, Otpverifier,Creatstory,Callapi } from "../../Util/Getdata/getdata"
+import { Findaccountcall, Newpasswordsubmitapi, Otpverifier,Creatstory,Callapi,Creatstorytext } from "../../Util/Getdata/getdata"
 import { store } from "../../Mobx"
 import html2canvas from 'html2canvas'
 export const Findaccountvaluechecker = async (data, setData, state, setState) => {
@@ -127,7 +127,6 @@ export const Postcreatedata = (data, setData, divref, setValuelength) => {
     else{
         setValuelength(0)
     }
-    // alert(obj.value.length)
     setData(obj)
 
 }
@@ -139,35 +138,22 @@ input.type = 'file';
 input.accept="image/png, image/gif, image/jpeg"
 input.onchange = async(e) => { 
    var file = e.target.files[0];
+//    console.log(file)
    formData.append("story",file)
-   let res=await Creatstory(file)
-   console.log(res)
+   await Creatstory(formData)
+   
+//    console.log(res)
 }
 
 input.click();
 }
-export const Textstory=()=>{
+export const Textstory=async()=>{
     let img=document.getElementById("textstoryimg")
-    console.log(img)
-    fun(img)
-}
-const fun=async(img)=>{
     let canvas=await html2canvas(img, {
-     useCORS: true,
-   })
-    let data=canvas.toDataURL("image/png", 1.0);
-   downloadImage(data);
- }
- const downloadImage = (blob) => {
- const fakeLink = window.document.createElement("a");
- fakeLink.style = "display:none;";
- fakeLink.download ="image.png";
- 
- fakeLink.href = blob;
- 
- document.body.appendChild(fakeLink);
- fakeLink.click();
- document.body.removeChild(fakeLink);
- 
- fakeLink.remove();
- }
+        useCORS: true,
+      })
+       let data=canvas.toDataURL("image/png", 1.0);
+    let res=await Creatstorytext(data)
+    console.log(res)
+}
+

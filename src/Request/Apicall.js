@@ -19,9 +19,20 @@ const Apicall = async (method, data, link) => {
         }
         case "postheader":
           {
+      
             res=await axios.post(`${process.env.REACT_APP_API_KEY}${link}`,data, { headers: { "authorization": `Bearer ${localStorage.getItem("token")}` } })
           break;
           }
+          case "patchheader":
+            {
+              res=await axios.patch(`${process.env.REACT_APP_API_KEY}${link}`,data, { headers: { "authorization": `Bearer ${localStorage.getItem("token")}` } })
+          break;
+            }
+          case "postheadertext":
+            {
+              res=await axios.post(`${process.env.REACT_APP_API_KEY}${link}`,{data:data},{ headers: { Accept: "application/json","Content-Type": "application/json","authorization": `Bearer ${localStorage.getItem("token")}` } })
+              break;
+            }
     default:
   }
   return res;

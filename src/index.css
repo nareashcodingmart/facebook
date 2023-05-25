@@ -56,3 +56,7 @@ html{
 #displayblock{
     display: block;
 }
+
+.MuiDialog-container {
+    overflow-y: scroll;
+}
